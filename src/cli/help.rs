@@ -44,8 +44,7 @@ pub fn main() -> std::io::Result<()> {
 
 fn show_utils_commands() -> std::io::Result<()> {
     println!("{}", style("=== Utils Commands ===").cyan().bold());
-    println!("{}", format!("{} : Creates a new Svelte project.", style("init").yellow().bold()));
-    println!("{}", format!("{} : Creates a project from a template.", style("create").yellow().bold()));
+    println!("{}", format!("{} : Creates a new Svelte project.", style("init <project_name> <ui_toolkit>").yellow().bold()));
     println!("{}", format!("{} : Installs project dependencies.", style("install").yellow().bold()));
     println!("{}", format!("{} : Updates project dependencies.", style("update").yellow().bold()));
     println!("{}", format!("{} : Cleans up temporary files.", style("clean").yellow().bold()));

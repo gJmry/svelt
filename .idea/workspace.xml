@@ -8,11 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a52e598-54d6-425d-ac1c-92a9555eb3f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/cli.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cli/project_creation.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/is_svelte_project.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Rust File" />
       </list>
     </option>
   </component>
@@ -55,10 +64,18 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
     &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/project_creation.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/utils/is_svelte_project.rs&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;language.rust&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerem\Documents\Code\svelte-cli\src\cli" />
+      <recent name="C:\Users\jerem\Documents\Code\svelte-cli" />
+    </key>
+  </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
   </component>
@@ -85,6 +102,7 @@
       <workItem from="1731089203767" duration="781000" />
       <workItem from="1731145127294" duration="1543000" />
       <workItem from="1731150633116" duration="304000" />
+      <workItem from="1731167382650" duration="5979000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,12 @@ use cliclack::*;
 use crate::{NPM, NPX};
 
 pub fn main(args: Vec<String>) {
-    let project_name = if args.len() > 2 {
+    make_svelte_project(get_project_name(args.clone()));
+    add_ui_toolkit(get_ui_toolkit_name(args.clone()));
+}
+
+fn get_project_name(args: Vec<String>) -> String {
+    if args.len() > 2 {
         args[2].clone()
     } else {
         intro("Project Creation").expect("Error while prompting intro");
@@ -22,9 +27,11 @@ pub fn main(args: Vec<String>) {
             .unwrap();
 
         name
-    };
+    }
+}
 
-    let ui_toolkit_name = if args.len() > 3 {
+fn get_ui_toolkit_name(args: Vec<String>) -> String {
+    if args.len() > 3 {
         args[3].clone()
     } else {
         let ui_toolkit_name: &str = select("Pick a UI toolkit".to_string())
@@ -38,10 +45,7 @@ pub fn main(args: Vec<String>) {
             .unwrap();
 
         ui_toolkit_name.parse().unwrap()
-    };
-
-    make_svelte_project(project_name);
-    add_ui_toolkit(ui_toolkit_name);
+    }
 }
 
 fn make_svelte_project(project_name: String) {

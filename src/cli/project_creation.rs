@@ -5,6 +5,7 @@ use cliclack::*;
 use crate::{NPM, NPX};
 
 pub fn main(args: Vec<String>) {
+
     make_svelte_project(get_project_name(args.clone()));
     add_ui_toolkit(get_ui_toolkit_name(args.clone()));
 }

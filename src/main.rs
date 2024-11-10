@@ -1,5 +1,6 @@
 
 mod cli;
+mod utils;
 
 use std::env;
 

@@ -4,49 +4,42 @@ use std::process::{exit, Command};
 use cliclack::*;
 use crate::{NPM, NPX};
 
-pub fn main(args: Vec<String>) {
+pub fn main(project_name: Option<String>, ui_toolkit_name: Option<String>) {
+    let project_name = project_name.unwrap_or_else(get_project_name);
+    let ui_toolkit_name = ui_toolkit_name.unwrap_or_else(get_ui_toolkit_name);
 
-    make_svelte_project(get_project_name(args.clone()));
-    add_ui_toolkit(get_ui_toolkit_name(args.clone()));
+    make_svelte_project(project_name);
+    add_ui_toolkit(ui_toolkit_name);
 }
 
-fn get_project_name(args: Vec<String>) -> String {
-    if args.len() > 2 {
-        args[2].clone()
-    } else {
-        intro("Project Creation").expect("Error while prompting intro");
-        let name: String = input("What is your project name?")
-            .placeholder("./sparkling-solid")
-            .validate(|input: &String| {
-                if input.is_empty() {
-                    Err("Please enter a name.")
-                } else {
-                    Ok(())
-                }
-            })
-            .interact()
-            .unwrap();
-
-        name
-    }
+fn get_project_name() -> String {
+    intro("Project Creation").expect("Error while prompting intro");
+    input("What is your project name?")
+        .placeholder("./sparkling-solid")
+        .validate(|input: &String| {
+            if input.is_empty() {
+                Err("Please enter a name.")
+            } else {
+                Ok(())
+            }
+        })
+        .interact()
+        .unwrap()
 }
 
-fn get_ui_toolkit_name(args: Vec<String>) -> String {
-    if args.len() > 3 {
-        args[3].clone()
-    } else {
-        let ui_toolkit_name: &str = select("Pick a UI toolkit".to_string())
-            .initial_value("None")
-            .item("None", "None", "You don't want an UI Toolkit because you are better")
-            .item("Tailwind", "Tailwind", "A utility-first CSS framework for rapid UI development.")
-            .item("Bootstrap", "Bootstrap", "A popular CSS framework with a lot of pre-built components.")
-            .item("Skeleton", "Skeleton", "A lightweight CSS framework for minimalistic designs.")
-            .item("Flowbite", "Flowbite", "A UI kit based on Tailwind CSS with ready-to-use components.")
-            .interact()
-            .unwrap();
 
-        ui_toolkit_name.parse().unwrap()
-    }
+fn get_ui_toolkit_name() -> String {
+    let ui_toolkit_name: &str = select("Pick a UI toolkit".to_string())
+        .initial_value("None")
+        .item("None", "None", "You don't want an UI Toolkit because you are better")
+        .item("Tailwind", "Tailwind", "A utility-first CSS framework for rapid UI development.")
+        .item("Bootstrap", "Bootstrap", "A popular CSS framework with a lot of pre-built components.")
+        .item("Skeleton", "Skeleton", "A lightweight CSS framework for minimalistic designs.")
+        .item("Flowbite", "Flowbite", "A UI kit based on Tailwind CSS with ready-to-use components.")
+        .interact()
+        .unwrap();
+
+    ui_toolkit_name.parse().unwrap()
 }
 
 fn make_svelte_project(project_name: String) {

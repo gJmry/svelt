@@ -10,6 +10,7 @@ pub enum Commands {
         ui_toolkit: Option<String>,
     },
     Version,
+    #[command(alias = "h")]
     Help,
     #[command(aliases = &["i", "ins"])]
     Install,

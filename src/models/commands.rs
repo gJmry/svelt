@@ -11,6 +11,6 @@ pub enum Commands {
     },
     Version,
     Help,
-    #[command(alias = "i")]
+    #[command(aliases = &["i", "ins"])]
     Install,
 }

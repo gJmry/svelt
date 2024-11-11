@@ -38,37 +38,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;21.7.3&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.9.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerem/Documents/Code/svelte-cli&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/cli/models/cli.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/cli.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/create/add_ui_toolkit.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/create/project_creation.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/help/help.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/npm/install.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/npm_commands/install.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/utils/is_svelte_project.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/models/cli.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/project_creation.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/utils/add_ui_toolkit.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/utils/is_svelte_project.rs&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "dev",
+    "javascript.nodejs.core.library.configured.version": "21.7.3",
+    "javascript.nodejs.core.library.typings.version": "22.9.0",
+    "last_opened_file_path": "C:/Users/jerem/Documents/Code/svelte-cli",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/cli/models/cli.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/cli.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/create/add_ui_toolkit.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/create/project_creation.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/help/help.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/npm/install.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/npm_commands/install.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/controller/utils/is_svelte_project.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/models/cli.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/project_creation.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/utils/add_ui_toolkit.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/jerem/Documents/Code/svelte-cli/src/utils/is_svelte_project.rs": "true",
+    "settings.editor.selected.configurable": "language.rust",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jerem\Documents\Code\svelte-cli\src\controller" />
@@ -107,7 +107,7 @@
       <workItem from="1731167382650" duration="12066000" />
       <workItem from="1731349126616" duration="1058000" />
       <workItem from="1731364219786" duration="1661000" />
-      <workItem from="1731365918114" duration="345000" />
+      <workItem from="1731365918114" duration="452000" />
     </task>
     <servers />
   </component>

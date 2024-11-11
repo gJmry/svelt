@@ -9,6 +9,7 @@ pub enum Commands {
         #[arg(value_name = "UI_TOOLKIT")]
         ui_toolkit: Option<String>,
     },
+    #[command(alias = "v")]
     Version,
     #[command(alias = "h")]
     Help,

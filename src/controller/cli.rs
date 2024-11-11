@@ -3,7 +3,7 @@ use clap::{CommandFactory, Parser, Subcommand};
 use crate::models::commands::Commands;
 use crate::models::cli::Cli;
 use crate::controller::create;
-use crate::controller::npm::install;
+use crate::controller::npm::*;
 
 pub fn run(args: Vec<String>) {
     let cli = Cli::parse();
@@ -19,9 +19,11 @@ pub fn run(args: Vec<String>) {
         Some(Commands::Install {package, flag}) => {
             install::main(package, flag);
         }
+        Some(Commands::Run {env}) => {
+            run::main(env);
+        }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();
         }
-        _ => {Cli::command().print_help().unwrap();}
     }
 }

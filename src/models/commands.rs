@@ -20,4 +20,9 @@ pub enum Commands {
         #[arg(value_name = "FLAG")]
         flag: Option<String>,
     },
+    #[command(alias = "r")]
+    Run{
+        #[arg(value_name = "ENV")]
+        env: Option<String>,
+    }
 }

@@ -16,8 +16,8 @@ pub fn run(args: Vec<String>) {
         Some(Commands::Version) => {
             println!("Version 1.0.0");
         }
-        Some(Commands::Install) => {
-            install::main();
+        Some(Commands::Install {package, flag}) => {
+            install::main(package, flag);
         }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();

@@ -9,6 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2a52e598-54d6-425d-ac1c-92a9555eb3f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/cli.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/cli.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/npm/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/npm/install.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/commands.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/commands.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +109,7 @@
       <workItem from="1731167382650" duration="12066000" />
       <workItem from="1731349126616" duration="1058000" />
       <workItem from="1731364219786" duration="1661000" />
-      <workItem from="1731365918114" duration="452000" />
+      <workItem from="1731365918114" duration="995000" />
     </task>
     <servers />
   </component>

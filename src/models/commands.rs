@@ -13,6 +13,11 @@ pub enum Commands {
     Version,
     #[command(alias = "h")]
     Help,
-    #[command(aliases = &["i", "ins"])]
-    Install,
+    #[command(aliases = &["i", "ins, add"])]
+    Install{
+        #[arg(value_name = "PACKAGE")]
+        package: Option<String>,
+        #[arg(value_name = "FLAG")]
+        flag: Option<String>,
+    },
 }

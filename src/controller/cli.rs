@@ -1,16 +1,8 @@
-mod project_creation;
-mod help;
-mod version_check;
-
+use create::*;
 use clap::{CommandFactory, Parser, Subcommand};
-use crate::commands::Commands;
-
-#[derive(Parser)]
-#[command(author = "Jérémy Girard", version = "0.1", about = "A CLI made in Rust for Svelte", long_about = None)]
-pub struct Cli {
-    #[command(subcommand)]
-    pub command: Option<Commands>,
-}
+use crate::models::commands::Commands;
+use crate::models::cli::Cli;
+use crate::controller::create;
 
 pub fn run(args: Vec<String>) {
     let cli = Cli::parse();

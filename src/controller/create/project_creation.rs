@@ -1,8 +1,8 @@
-mod add_ui_toolkit;
-
 use std::process::{exit, Command};
 use cliclack::*;
-use crate::{NPM, NPX};
+use crate::{NPX};
+use create::add_ui_toolkit;
+use crate::controller::create;
 
 pub fn main(project_name: Option<String>, ui_toolkit_name: Option<String>) {
     let project_name = project_name.unwrap_or_else(get_project_name);

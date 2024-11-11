@@ -1,7 +1,7 @@
+mod controller;
+mod models;
 
-mod cli;
-mod utils;
-mod commands;
+use controller::cli;
 
 use std::env;
 

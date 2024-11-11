@@ -28,6 +28,9 @@ pub fn run(args: Vec<String>) {
         Some(Commands::Update {package}) => {
             update::main(package);
         }
+        Some(Commands::Uninstall {package}) =>{
+            uninstall::main(package);
+        }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();
         }

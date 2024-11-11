@@ -30,5 +30,10 @@ pub enum Commands {
     Update{
         #[arg(value_name = "PACKAGE")]
         package: Option<String>,
-    }
+    },
+    #[command(aliases = &["uninstall", "delete", "remove"])]
+    Uninstall {
+        #[arg(value_name = "PACKAGE", required = true)]
+        package: String,
+    },
 }

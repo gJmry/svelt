@@ -3,6 +3,7 @@ use clap::{CommandFactory, Parser, Subcommand};
 use crate::models::commands::Commands;
 use crate::models::cli::Cli;
 use crate::controller::create;
+use crate::controller::npm::install;
 
 pub fn run(args: Vec<String>) {
     let cli = Cli::parse();
@@ -15,8 +16,12 @@ pub fn run(args: Vec<String>) {
         Some(Commands::Version) => {
             println!("Version 1.0.0");
         }
+        Some(Commands::Install) => {
+            install::main();
+        }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();
         }
+        _ => {Cli::command().print_help().unwrap();}
     }
 }

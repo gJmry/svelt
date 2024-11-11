@@ -22,6 +22,9 @@ pub fn run(args: Vec<String>) {
         Some(Commands::Run {env}) => {
             run::main(env);
         }
+        Some(Commands::Start) => {
+            start::main();
+        }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();
         }

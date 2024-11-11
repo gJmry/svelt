@@ -24,5 +24,6 @@ pub enum Commands {
     Run{
         #[arg(value_name = "ENV")]
         env: Option<String>,
-    }
+    },
+    Start,
 }

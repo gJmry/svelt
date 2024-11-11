@@ -26,4 +26,9 @@ pub enum Commands {
         env: Option<String>,
     },
     Start,
+    #[command(aliases = &["up", "upgrade"])]
+    Update{
+        #[arg(value_name = "PACKAGE")]
+        package: Option<String>,
+    }
 }

@@ -16,7 +16,6 @@ pub const NPM: &'static str = "npm";
 pub const NPX: &'static str = "npx";
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    cli::run(args);
+    cli::run();
 }
 

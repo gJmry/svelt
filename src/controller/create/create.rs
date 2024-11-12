@@ -1,10 +1,10 @@
 use cliclack::{input, select, Validate};
 use crate::controller::create::match_schematic::match_schematic;
-use crate::controller::utils::is_svelte_project;
+use crate::controller::utils::path_utils;
 use crate::models::schematic::Schematic;
 
 pub fn main(schematic: Option<String>, name: Option<String>) {
-    if (!is_svelte_project::main()) {
+    if !path_utils::main() {
         println!("Please use this command when you are in a Svelte Project");
     } else {
         let schematic = schematic.unwrap_or_else(choose_schematic);

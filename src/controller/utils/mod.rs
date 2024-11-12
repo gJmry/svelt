@@ -1,1 +1,1 @@
-pub mod is_svelte_project;
+pub mod path_utils;

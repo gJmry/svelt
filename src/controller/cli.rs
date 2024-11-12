@@ -1,12 +1,12 @@
-use init::*;
-use clap::{CommandFactory, Parser, Subcommand};
-use crate::models::commands::Commands;
-use crate::models::cli::Cli;
+use crate::controller::create::*;
 use crate::controller::init;
 use crate::controller::npm::*;
-use crate::controller::create::*;
+use crate::models::cli::Cli;
+use crate::models::commands::Commands;
+use clap::{CommandFactory, Parser};
+use init::*;
 
-pub fn run(args: Vec<String>) {
+pub fn run() {
     let cli = Cli::parse();
 
 

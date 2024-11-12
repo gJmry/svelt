@@ -38,8 +38,6 @@ pub fn main() -> std::io::Result<()> {
         }
         prompt_to_return()?;
     }
-
-    Ok(())
 }
 
 fn show_utils_commands() -> std::io::Result<()> {

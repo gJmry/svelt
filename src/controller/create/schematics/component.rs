@@ -1,7 +1,7 @@
+use crate::controller::utils::path_utils;
 use std::fs::{create_dir_all, File};
-use std::io::{Write, Result};
-use std::path::{Path, PathBuf};
-use crate::controller::utils::is_svelte_project;
+use std::io::{Result, Write};
+use std::path::Path;
 
 pub fn main(name: String) {
     if let Err(e) = make_component_file(name) {
@@ -10,12 +10,12 @@ pub fn main(name: String) {
 }
 
 fn make_component_file(name: String) -> Result<()> {
-    let root_path = is_svelte_project::get_root_path(is_svelte_project::get_current_directory());
+    let root_path = path_utils::get_root_path(path_utils::get_current_directory());
 
     let filename = format!("{}/src/components/{}.svelte", root_path.display(), name);
     let path = Path::new(&filename);
 
-    if(Path::exists(path)){
+    if Path::exists(path){
         println!("Component file already exists");
         std::process::exit(0);
     }

@@ -1,4 +1,4 @@
-use crate::controller::create::schematics::{component, store};
+use crate::controller::create::schematics::*;
 use crate::models::schematic::Schematic;
 
 pub fn match_schematic(schematic_name: String, name: String) {
@@ -8,6 +8,9 @@ pub fn match_schematic(schematic_name: String, name: String) {
         },
         Some(Schematic::Store) => {
             store::main(name);
+        },
+        Some(Schematic::Page) => {
+            page::main(name);
         }
         _ => {}
     }

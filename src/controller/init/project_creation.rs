@@ -1,3 +1,4 @@
+use std::fs;
 use crate::controller::init::{build_toolkit, dev_toolkit, test_toolkit, ui_toolkit};
 use crate::NPX;
 use cliclack::*;
@@ -10,11 +11,12 @@ pub fn main(project_name: Option<String>) {
     let test_toolkit_name = get_test_toolkit_name;
     let build_toolkit_name = get_build_toolkit_name;
 
-    make_svelte_project(project_name);
-    add_ui_toolkit(ui_toolkit_name);
-    add_dev_toolkit(dev_toolkit_name);
-    add_test_toolkit(test_toolkit_name);
-    add_build_toolkit(build_toolkit_name);
+    let project_dir = make_svelte_project(project_name);
+
+    add_ui_toolkit(ui_toolkit_name, &project_dir);
+    add_dev_toolkit(dev_toolkit_name, &project_dir);
+    add_test_toolkit(test_toolkit_name, &project_dir);
+    add_build_toolkit(build_toolkit_name, &project_dir);
 }
 
 fn get_project_name() -> String {
@@ -165,17 +167,17 @@ fn get_build_toolkit_name() -> &'static str {
         .unwrap()
 }
 
-fn add_ui_toolkit(toolkit_name: fn() -> &'static str) {
+fn add_ui_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     match toolkit_name() {
         "skeleton" => ui_toolkit::skeleton::main(),
         "flowbite" => ui_toolkit::flowbite::main(),
-        "tailwind" => ui_toolkit::tailwind::main(),
+        "tailwind" => ui_toolkit::tailwind::main(&project_dir),
         "bootstrap" => ui_toolkit::bootstrap::main(),
         _ => {}
     }
 }
 
-fn add_dev_toolkit(toolkit_name: fn() -> &'static str) {
+fn add_dev_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     match toolkit_name() {
         "eslint" => dev_toolkit::eslint::main(),
         "prettier" => dev_toolkit::prettier::main(),
@@ -185,7 +187,7 @@ fn add_dev_toolkit(toolkit_name: fn() -> &'static str) {
     }
 }
 
-fn add_test_toolkit(toolkit_name: fn() -> &'static str) {
+fn add_test_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     match toolkit_name() {
         "jest" => test_toolkit::jest::main(),
         "mocha" => test_toolkit::mocha::main(),
@@ -195,7 +197,7 @@ fn add_test_toolkit(toolkit_name: fn() -> &'static str) {
     }
 }
 
-fn add_build_toolkit(toolkit_name: fn() -> &'static str) {
+fn add_build_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     match toolkit_name() {
         "webpack" => build_toolkit::webpack::main(),
         "vite" => build_toolkit::vite::main(),
@@ -205,11 +207,11 @@ fn add_build_toolkit(toolkit_name: fn() -> &'static str) {
     }
 }
 
-fn make_svelte_project(project_name: String) {
+fn make_svelte_project(project_name: String) -> String {
     let status = Command::new(NPX)
         .arg("sv")
         .arg("create")
-        .arg(project_name)
+        .arg(project_name.clone())
         .status()
         .expect("Failed to execute command");
 
@@ -217,4 +219,12 @@ fn make_svelte_project(project_name: String) {
         eprintln!("Error trying to use NPX command");
         exit(1);
     }
+
+    let project_dir = format!("./{}", project_name);
+    if !fs::metadata(&project_dir).is_ok() {
+        eprintln!("The svelte project doesn't exist after creation");
+        exit(1);
+    }
+
+    project_dir
 }

@@ -42,5 +42,7 @@ pub enum Commands {
 
         #[arg(value_name = "NAME")]
         name: Option<String>,
-    }
+    },
+    Dev,
+    Build
 }

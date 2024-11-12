@@ -35,8 +35,15 @@ pub fn run() {
         Some(Commands::Create {schematic, name}) => {
             create::main(schematic, name);
         }
+        Some(Commands::Dev) => {
+            run::dev();
+        }
+        Some(Commands::Build) => {
+            run::build();
+        }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();
         }
+
     }
 }

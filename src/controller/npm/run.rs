@@ -19,3 +19,19 @@ pub fn main(env: Option<String>){
     }
 
 }
+
+pub fn dev(){
+    Command::new(NPM)
+        .arg("run")
+        .arg("dev")
+        .status()
+        .expect("Error when running npm run dev");
+}
+
+pub fn build(){
+    Command::new(NPM)
+        .arg("run")
+        .arg("build")
+        .status()
+        .expect("Error when running npm run dev");
+}

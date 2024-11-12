@@ -1,5 +1,5 @@
 pub mod cli;
-mod init;
-mod utils;
-mod npm;
 mod create;
+mod init;
+mod npm;
+mod utils;

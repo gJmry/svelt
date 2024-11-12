@@ -1,5 +1,5 @@
 pub mod component;
-pub mod store;
-pub mod page;
 pub mod layout;
+pub mod page;
 pub mod service;
+pub mod store;

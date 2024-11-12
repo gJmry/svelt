@@ -15,7 +15,7 @@ fn make_component_file(name: String) -> Result<()> {
     let filename = format!("{}/src/components/{}.svelte", root_path.display(), name);
     let path = Path::new(&filename);
 
-    if Path::exists(path){
+    if Path::exists(path) {
         println!("Component file already exists");
         std::process::exit(0);
     }
@@ -29,10 +29,7 @@ fn make_component_file(name: String) -> Result<()> {
     file.write_all(content.as_bytes())?;
 
     let display_path = filename.replace("\\", "/");
-    println!(
-        "Successfully generated: {}",
-        display_path
-    );
+    println!("Successfully generated: {}", display_path);
 
     Ok(())
 }

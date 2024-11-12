@@ -11,7 +11,6 @@ pub enum Schematic {
     Test,
 }
 impl Schematic {
-
     pub fn all() -> Vec<Schematic> {
         vec![
             Schematic::Component,

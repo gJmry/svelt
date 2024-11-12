@@ -1,7 +1,7 @@
-use cliclack::{input, select};
 use crate::controller::create::match_schematic::match_schematic;
 use crate::controller::utils::path_utils;
 use crate::models::schematic::Schematic;
+use cliclack::{input, select};
 
 pub fn main(schematic: Option<String>, name: Option<String>) {
     if !path_utils::main() {
@@ -22,15 +22,9 @@ fn choose_schematic() -> String {
         .items(
             &schematics
                 .iter()
-                .map(|schematic| {
-                    (
-                        schematic.command(),
-                        schematic.label(),
-                        schematic.hint(),
-                    )
-                })
+                .map(|schematic| (schematic.command(), schematic.label(), schematic.hint()))
                 .collect::<Vec<(&str, &str, &str)>>()
-                .as_slice()
+                .as_slice(),
         )
         .interact()
         .unwrap_or_else(|_| {
@@ -63,4 +57,3 @@ fn make_first_letter_uppercase(s: &str) -> String {
         String::new()
     }
 }
-

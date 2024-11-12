@@ -1,12 +1,12 @@
 use cliclack::{input, select, Validate};
+use crate::controller::create::match_schematic::match_schematic;
 use crate::models::schematic::Schematic;
 
 pub fn main(schematic: Option<String>, name: Option<String>) {
     let schematic = schematic.unwrap_or_else(choose_schematic);
     let name = name.unwrap_or_else(|| choose_name(schematic.clone()));
 
-    println!("Chosen schematic: {}", schematic);
-    println!("Chosen name: {}", name);
+    match_schematic(schematic, name);
 }
 
 fn choose_schematic() -> String {
@@ -28,12 +28,12 @@ fn choose_schematic() -> String {
                 .as_slice()
         )
         .interact()
-        .unwrap();
+        .unwrap_or_else(|_| {
+            panic!("Failed to choose a schematic");
+        });
 
     schematic.to_string()
 }
-
-
 
 fn choose_name(schematic: String) -> String {
     input("What is your schematic name?")
@@ -46,7 +46,9 @@ fn choose_name(schematic: String) -> String {
             }
         })
         .interact()
-        .unwrap()
+        .unwrap_or_else(|_| {
+            panic!("Failed to get user input for schematic name");
+        })
 }
 
 fn make_first_letter_uppercase(s: &str) -> String {
@@ -56,3 +58,4 @@ fn make_first_letter_uppercase(s: &str) -> String {
         String::new()
     }
 }
+

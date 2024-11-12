@@ -1,3 +1,4 @@
+use crate::models::schematic;
 
 #[derive(Debug)]
 pub enum Schematic {
@@ -11,7 +12,6 @@ pub enum Schematic {
     Directive,
     Test,
 }
-
 impl Schematic {
 
     pub fn all() -> Vec<Schematic> {
@@ -66,5 +66,11 @@ impl Schematic {
             Schematic::Directive => "Generate a new directive in Svelte.",
             Schematic::Test => "Generate a test file for a Svelte component.",
         }
+    }
+
+    pub fn find_by_name(name: &str) -> Option<Schematic> {
+        Schematic::all()
+            .into_iter()
+            .find(|schematic| schematic.command() == name)
     }
 }

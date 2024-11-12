@@ -11,8 +11,8 @@ pub fn run() {
 
 
     match cli.command {
-        Some(Commands::Init { name, ui_toolkit }) => {
-            project_creation::main(name, ui_toolkit);
+        Some(Commands::Init { name }) => {
+            project_creation::main(name);
         }
         Some(Commands::Version) => {
             println!("Version 1.0.0");
@@ -40,6 +40,9 @@ pub fn run() {
         }
         Some(Commands::Build) => {
             run::build();
+        }
+        Some(Commands::Lint) => {
+
         }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();

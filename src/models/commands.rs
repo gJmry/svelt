@@ -5,8 +5,6 @@ pub enum Commands {
     Init {
         #[arg(value_name = "NAME")]
         name: Option<String>,
-        #[arg(value_name = "UI_TOOLKIT")]
-        ui_toolkit: Option<String>,
     },
     #[command(alias = "v")]
     Version,
@@ -24,6 +22,9 @@ pub enum Commands {
         #[arg(value_name = "ENV")]
         env: Option<String>,
     },
+    Dev,
+    Build,
+    Lint,
     Start,
     #[command(aliases = &["up", "upgrade"])]
     Update{
@@ -43,6 +44,4 @@ pub enum Commands {
         #[arg(value_name = "NAME")]
         name: Option<String>,
     },
-    Dev,
-    Build
 }

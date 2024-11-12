@@ -43,22 +43,22 @@ fn get_ui_toolkit_name() -> &'static str {
             "You don't want a( UI Toolkit because you are better",
         )
         .item(
-            "Tailwind",
+            "tailwind",
             "Tailwind",
             "A utility-first CSS framework for rapid UI development.",
         )
         .item(
-            "Bootstrap",
+            "bootstrap",
             "Bootstrap",
             "A popular CSS framework with a lot of pre-built components.",
         )
         .item(
-            "Skeleton",
+            "skeleton",
             "Skeleton",
             "A lightweight CSS framework for minimalistic designs.",
         )
         .item(
-            "Flowbite",
+            "flowbite",
             "Flowbite",
             "A UI kit based on Tailwind CSS with ready-to-use components.",
         )
@@ -75,22 +75,22 @@ fn get_dev_toolkit_name() -> &'static str {
             "You don't want a Developpment Toolkit because you are better",
         )
         .item(
-            "ESLint",
+            "eSLint",
             "ESLint",
             "A popular linter for identifying and fixing JavaScript/TypeScript issues.",
         )
         .item(
-            "Prettier",
+            "prettier",
             "Prettier",
             "An opinionated code formatter that supports multiple languages.",
         )
         .item(
-            "Husky",
+            "husky",
             "Husky",
             "A tool to prevent bad `git commit` or `push` by running scripts before those actions.",
         )
         .item(
-            "Lint-staged",
+            "lint-staged",
             "Lint-staged",
             "Runs linters on pre-committed files in Git, useful with Husky for pre-commit hooks.",
         )
@@ -107,29 +107,24 @@ fn get_test_toolkit_name() -> &'static str {
             "You don't want a Testing Toolkit because you are better",
         )
         .item(
-            "Jest",
+            "jest",
             "Jest",
             "A delightful JavaScript testing framework with a focus on simplicity.",
         )
         .item(
-            "Mocha",
+            "mocha",
             "Mocha",
             "A feature-rich JavaScript test framework running on Node.js and in the browser.",
         )
         .item(
-            "Cypress",
+            "cypress",
             "Cypress",
             "A JavaScript end-to-end testing framework for web applications.",
         )
         .item(
-            "Jasmine",
+            "jasmine",
             "Jasmine",
             "A behavior-driven testing framework for JavaScript, often used with Angular.",
-        )
-        .item(
-            "React Testing Library",
-            "React Testing Library",
-            "A lightweight testing library focused on testing React components.",
         )
         .interact()
         .unwrap()
@@ -144,22 +139,22 @@ fn get_build_toolkit_name() -> &'static str {
             "You don't want a Deployement Toolkit because you are better",
         )
         .item(
-            "Webpack",
+            "webpack",
             "Webpack",
             "A static module bundler for modern JavaScript applications.",
         )
         .item(
-            "Vite",
+            "vite",
             "Vite",
             "A next-generation, fast build tool that focuses on speed and simplicity.",
         )
         .item(
-            "Parcel",
+            "parcel",
             "Parcel",
             "A zero-config, blazingly fast web application bundler.",
         )
         .item(
-            "Rollup",
+            "rollup",
             "Rollup",
             "A JavaScript module bundler optimized for ES modules.",
         )

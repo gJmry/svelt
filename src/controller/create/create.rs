@@ -1,4 +1,4 @@
-use cliclack::{input, select, Validate};
+use cliclack::{input, select};
 use crate::controller::create::match_schematic::match_schematic;
 use crate::controller::utils::path_utils;
 use crate::models::schematic::Schematic;

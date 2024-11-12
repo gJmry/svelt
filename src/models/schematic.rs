@@ -1,5 +1,3 @@
-use crate::models::schematic;
-
 #[derive(Debug)]
 pub enum Schematic {
     Component,

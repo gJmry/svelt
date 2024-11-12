@@ -3,8 +3,6 @@ mod models;
 
 use controller::cli;
 
-use std::env;
-
 #[cfg(windows)]
 pub const NPM: &'static str = "npm.cmd";
 #[cfg(windows)]

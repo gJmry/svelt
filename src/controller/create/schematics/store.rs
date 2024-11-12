@@ -15,7 +15,7 @@ fn make_store_file(name: String) -> Result<()> {
     let path = Path::new(&filename);
 
     if Path::exists(path) {
-        println!("Component file already exists");
+        println!("Store file already exists");
         std::process::exit(0);
     }
 

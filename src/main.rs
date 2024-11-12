@@ -16,4 +16,3 @@ pub const NPX: &'static str = "npx";
 fn main() {
     cli::run();
 }
-

@@ -1,15 +1,15 @@
+use crate::controller::utils::path_utils;
 use std::fs::{create_dir_all, File};
 use std::io::{Result, Write};
 use std::path::Path;
-use crate::controller::utils::path_utils;
 
-pub fn main(name: String){
+pub fn main(name: String) {
     if let Err(e) = make_layout_file(name) {
         eprintln!("Error: {}", e);
     }
 }
 
-fn make_layout_file(name: String) -> Result<()>{
+fn make_layout_file(name: String) -> Result<()> {
     let root_path = path_utils::get_root_path(path_utils::get_current_directory());
 
     let filename = format!("{}/src/routes/{}/+layout.svelte", root_path.display(), name);
@@ -29,19 +29,17 @@ fn make_layout_file(name: String) -> Result<()>{
     file.write_all(content.as_bytes())?;
 
     let display_path = filename.replace("\\", "/");
-    println!(
-        "Successfully generated: {}",
-        display_path
-    );
+    println!("Successfully generated: {}", display_path);
 
     Ok(())
 }
 
 fn layout_file_configuration(name: String) -> String {
-    format!("<main>
+    format!(
+        "<main>
     {}
     <slot></slot>
 </main>",
-            name)
+        name
+    )
 }
-

@@ -1,7 +1,7 @@
-use std::process::Command;
 use crate::NPM;
+use std::process::Command;
 
-pub fn main(){
+pub fn main() {
     Command::new(NPM)
         .arg("start")
         .status()

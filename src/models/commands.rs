@@ -11,14 +11,14 @@ pub enum Commands {
     #[command(alias = "h")]
     Help,
     #[command(aliases = &["i", "ins, add"])]
-    Install{
+    Install {
         #[arg(value_name = "PACKAGE")]
         package: Option<String>,
         #[arg(value_name = "FLAG")]
         flag: Option<String>,
     },
     #[command(alias = "r")]
-    Run{
+    Run {
         #[arg(value_name = "ENV")]
         env: Option<String>,
     },
@@ -27,7 +27,7 @@ pub enum Commands {
     Lint,
     Start,
     #[command(aliases = &["up", "upgrade"])]
-    Update{
+    Update {
         #[arg(value_name = "PACKAGE")]
         package: Option<String>,
     },
@@ -37,7 +37,7 @@ pub enum Commands {
         package: String,
     },
     #[command(aliases = &["c", "g", "generate", "make"])]
-    Create{
+    Create {
         #[arg(value_name = "SCHEMATIC")]
         schematic: Option<String>,
 

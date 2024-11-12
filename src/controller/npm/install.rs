@@ -1,6 +1,6 @@
-use std::process::Command;
-use std::process::exit;
 use crate::NPM;
+use std::process::exit;
+use std::process::Command;
 
 pub fn main(package: Option<String>, flag: Option<String>) {
     let mut npm_command = Command::new(NPM);
@@ -14,11 +14,7 @@ pub fn main(package: Option<String>, flag: Option<String>) {
         npm_command.arg(flag);
     }
 
-    if !npm_command
-        .status()
-        .map(|s| s.success())
-        .unwrap_or(false)
-    {
+    if !npm_command.status().map(|s| s.success()).unwrap_or(false) {
         eprintln!("Error running npm install");
         exit(1);
     }

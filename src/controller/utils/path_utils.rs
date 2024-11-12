@@ -1,7 +1,7 @@
-use std::fs;
-use std::path::{Path, PathBuf};
 use serde_json::Value;
 use std::env;
+use std::fs;
+use std::path::{Path, PathBuf};
 
 pub fn get_root_path<P: AsRef<Path>>(path: P) -> PathBuf {
     let mut current_path = path.as_ref().to_path_buf();
@@ -39,9 +39,10 @@ fn is_svelte_project<P: AsRef<Path>>(path: P) -> bool {
     json.get("dependencies")
         .and_then(|deps| deps.get("svelte"))
         .is_some()
-        || json.get("devDependencies")
-        .and_then(|dev_deps| dev_deps.get("svelte"))
-        .is_some()
+        || json
+            .get("devDependencies")
+            .and_then(|dev_deps| dev_deps.get("svelte"))
+            .is_some()
 }
 
 pub fn get_current_directory() -> PathBuf {

@@ -1,7 +1,7 @@
-use std::fs::{create_dir_all, File};
-use std::io::{Write, Result};
-use std::path::Path;
 use crate::controller::utils::path_utils;
+use std::fs::{create_dir_all, File};
+use std::io::{Result, Write};
+use std::path::Path;
 
 pub fn main(name: String) {
     if let Err(e) = make_store_file(name) {
@@ -28,10 +28,7 @@ fn make_store_file(name: String) -> Result<()> {
     file.write_all(content.as_bytes())?;
 
     let display_path = filename.replace("\\", "/");
-    println!(
-        "Successfully generated: {}",
-        display_path
-    );
+    println!("Successfully generated: {}", display_path);
 
     Ok(())
 }
@@ -51,8 +48,6 @@ export function resetStore() {{
     {}.set('initial value');
 }}
 "#,
-        name,
-        name,
-        name
+        name, name, name
     )
 }

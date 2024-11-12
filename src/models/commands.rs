@@ -2,7 +2,6 @@ use clap::Subcommand;
 
 #[derive(Subcommand, Debug, Clone)]
 pub enum Commands {
-    #[command(alias = "create")]
     Init {
         #[arg(value_name = "NAME")]
         name: Option<String>,
@@ -36,4 +35,12 @@ pub enum Commands {
         #[arg(value_name = "PACKAGE", required = true)]
         package: String,
     },
+    #[command(aliases = &["c", "g", "generate", "make"])]
+    Create{
+        #[arg(value_name = "SCHEMATIC")]
+        schematic: Option<String>,
+
+        #[arg(value_name = "NAME")]
+        name: Option<String>,
+    }
 }

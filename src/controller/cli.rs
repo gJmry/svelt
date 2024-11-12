@@ -1,9 +1,10 @@
-use create::*;
+use init::*;
 use clap::{CommandFactory, Parser, Subcommand};
 use crate::models::commands::Commands;
 use crate::models::cli::Cli;
-use crate::controller::create;
+use crate::controller::init;
 use crate::controller::npm::*;
+use crate::controller::create::*;
 
 pub fn run(args: Vec<String>) {
     let cli = Cli::parse();
@@ -28,8 +29,11 @@ pub fn run(args: Vec<String>) {
         Some(Commands::Update {package}) => {
             update::main(package);
         }
-        Some(Commands::Uninstall {package}) =>{
+        Some(Commands::Uninstall {package}) => {
             uninstall::main(package);
+        }
+        Some(Commands::Create {schematic, name}) => {
+            create::main(schematic, name);
         }
         Some(Commands::Help) | None => {
             Cli::command().print_help().unwrap();

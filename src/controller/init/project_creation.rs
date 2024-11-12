@@ -1,8 +1,8 @@
 use std::process::{exit, Command};
 use cliclack::*;
 use crate::{NPX};
-use create::add_ui_toolkit;
-use crate::controller::create;
+use init::add_ui_toolkit;
+use crate::controller::init;
 
 pub fn main(project_name: Option<String>, ui_toolkit_name: Option<String>) {
     let project_name = project_name.unwrap_or_else(get_project_name);
@@ -45,7 +45,7 @@ fn get_ui_toolkit_name() -> String {
 fn make_svelte_project(project_name: String) {
     let status = Command::new(NPX)
         .arg("sv")
-        .arg("create")
+        .arg("init")
         .arg(project_name)
         .status()
         .expect("Failed to execute command");

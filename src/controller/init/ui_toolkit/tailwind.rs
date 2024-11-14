@@ -12,10 +12,10 @@ pub fn main(project_dir: &str) {
 fn configure_tailwind(project_dir: &str) {
     install_tailwind(project_dir);
     init_tailwind(project_dir);
-    update_svelteconfig(project_dir);
     update_tailwindconfig(project_dir);
     create_tailwind_css(project_dir);
     update_layout_svelte(project_dir);
+    update_svelteconfig(project_dir);
 }
 
 fn install_tailwind(project_dir: &str) {
@@ -43,7 +43,11 @@ fn init_tailwind(project_dir: &str) {
 fn update_svelteconfig(project_dir: &str) {
     let svelte_config_path = Path::new(project_dir).join("svelte.config.js");
 
-    let mut svelte_config = match OpenOptions::new().write(true).create(true).open(&svelte_config_path) {
+    fs::remove_file(Path::new(&svelte_config_path)).expect("Failed to remove Svelte Config.");
+    let mut svelte_config = match OpenOptions::new()
+        .write(true)
+        .create(true)
+        .truncate(true).open(&svelte_config_path) {
         Ok(file) => file,
         Err(_) => {
             eprintln!("Failed to open or create svelte.config.js at {}", svelte_config_path.display());
@@ -51,8 +55,7 @@ fn update_svelteconfig(project_dir: &str) {
         }
     };
 
-    let config_code = r#"
-import adapter from '@sveltejs/adapter-auto';
+    let config_code = r#"import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -63,15 +66,16 @@ const config = {
   preprocess: vitePreprocess()
 };
 
-export default config;
-"#;
+export default config;"#;
 
     writeln!(svelte_config, "{}", config_code).expect("Failed to write to svelte.config.js");
-    println!("svelte.config.js has been updated to use vitePreprocess.");
 }
 
+
 fn update_tailwindconfig(project_dir: &str) {
-    let mut tailwind_config = Path::new(project_dir).join("tailwind.config.js");
+    let tailwind_config_path = Path::new(project_dir).join("tailwind.config.js");
+
+    let mut tailwind_config = match OpenOptions::new().write(true).create(true).open(&tailwind_config_path) {
         Ok(file) => file,
         Err(_) => {
             eprintln!("Failed to open or create tailwind.config.js");
@@ -79,8 +83,7 @@ fn update_tailwindconfig(project_dir: &str) {
         }
     };
 
-    let config_code = r#"
-/** @type {import('tailwindcss').Config} */
+    let config_code = r#"/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
@@ -91,7 +94,6 @@ export default {
 "#;
 
     writeln!(tailwind_config, "{}", config_code).expect("Failed to write to tailwind.config.js");
-    println!("tailwind.config.js has been updated with content paths.");
 }
 
 fn create_tailwind_css(project_dir: &str) {
@@ -105,14 +107,12 @@ fn create_tailwind_css(project_dir: &str) {
         }
     };
 
-    let css_code = r#"
-@tailwind base;
+    let css_code = r#"@tailwind base;
 @tailwind components;
 @tailwind utilities;
 "#;
 
     writeln!(css_file, "{}", css_code).expect("Failed to write to app.css");
-    println!("app.css has been created with Tailwind directives.");
 }
 
 fn update_layout_svelte(project_dir: &str) {
@@ -125,8 +125,7 @@ fn update_layout_svelte(project_dir: &str) {
         }
     };
 
-    let import_code = r#"
-<script>
+    let import_code = r#"<script>
   import "../app.css";
 </script>
 
@@ -134,5 +133,4 @@ fn update_layout_svelte(project_dir: &str) {
 "#;
 
     writeln!(layout_file, "{}", import_code).expect("Failed to write to +layout.svelte");
-    println!("+layout.svelte has been updated to import app.css.");
 }

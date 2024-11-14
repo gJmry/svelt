@@ -1,6 +1,7 @@
-use std::fs;
+use std::{env, fs};
+use std::path::Path;
 use crate::controller::init::{build_toolkit, dev_toolkit, test_toolkit, ui_toolkit};
-use crate::NPX;
+use crate::{NPM, NPX};
 use cliclack::*;
 use std::process::{exit, Command};
 
@@ -17,6 +18,7 @@ pub fn main(project_name: Option<String>) {
     add_dev_toolkit(dev_toolkit_name, &project_dir);
     add_test_toolkit(test_toolkit_name, &project_dir);
     add_build_toolkit(build_toolkit_name, &project_dir);
+    open_project(project_dir);
 }
 
 fn get_project_name() -> String {
@@ -222,4 +224,20 @@ fn make_svelte_project(project_name: String) -> String {
     }
 
     project_dir
+}
+
+fn open_project(project_name: String){
+    let project_path = Path::new(&project_name);
+    if !project_path.exists() {
+        eprintln!("Directory {} doesn't exists", project_name);
+        exit(1);
+    }
+
+    env::set_current_dir(project_path).expect("Échec du changement de répertoire");
+
+    Command::new(NPM)
+        .arg("run")
+        .arg("dev")
+        .status()
+        .expect("Failed to execute command");
 }

@@ -10,39 +10,45 @@ pub fn run() {
     let cli = Cli::parse();
 
     match cli.command {
-        Some(Commands::Init { name }) => {
-            project_creation::main(name);
+        Some(command) => match command {
+            Commands::Init { name } => {
+                project_creation::main(name);
+            }
+            Commands::Version => {
+                println!("Version 1.0.0");
+            }
+           Commands::Install { package, flag } => {
+                install::main(package, flag);
+            }
+            Commands::Run { env } => {
+                run::main(env);
+            }
+            Commands::Start => {
+                start::main();
+            }
+            Commands::Update { package } => {
+                update::main(package);
+            }
+            Commands::Uninstall { package } => {
+                uninstall::main(package);
+            }
+            Commands::Create { schematic, name } => {
+                create::main(schematic, name);
+            }
+            Commands::Dev => {
+                run::dev();
+            }
+            Commands::Build => {
+                run::build();
+            }
+            Commands::Lint => {}
+            Commands::Help => {
+                Cli::command().print_help().unwrap();
+            }
         }
-        Some(Commands::Version) => {
-            println!("Version 1.0.0");
-        }
-        Some(Commands::Install { package, flag }) => {
-            install::main(package, flag);
-        }
-        Some(Commands::Run { env }) => {
-            run::main(env);
-        }
-        Some(Commands::Start) => {
-            start::main();
-        }
-        Some(Commands::Update { package }) => {
-            update::main(package);
-        }
-        Some(Commands::Uninstall { package }) => {
-            uninstall::main(package);
-        }
-        Some(Commands::Create { schematic, name }) => {
-            create::main(schematic, name);
-        }
-        Some(Commands::Dev) => {
-            run::dev();
-        }
-        Some(Commands::Build) => {
-            run::build();
-        }
-        Some(Commands::Lint) => {}
-        Some(Commands::Help) | None => {
+        None => {
             Cli::command().print_help().unwrap();
-        }
+        },
+
     }
 }

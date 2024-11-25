@@ -12,9 +12,6 @@ pub fn match_schematic(schematic_name: String, name: String) {
         Some(Schematic::Page) => {
             page::main(name);
         }
-        Some(Schematic::Layout) => {
-            layout::main(name);
-        }
         Some(Schematic::Service) => {
             service::main(name);
         }

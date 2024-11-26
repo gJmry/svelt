@@ -1,12 +1,37 @@
+use crate::controller::create::schematics::{error, layout};
 use crate::controller::utils::path_utils;
 use std::fs::{create_dir_all, File};
 use std::io::{Result, Write};
 use std::path::Path;
 
-pub fn main(name: String) {
-    if let Err(e) = make_page_file(name) {
+pub fn main(name: String, args: Vec<String>){
+    if let Err(e) = make_page_file(name.clone()) {
         eprintln!("Error: {}", e);
     }
+
+    if let Err(e) = parse_args(name.clone(), args){
+        eprintln!("Error: {}", e);
+    }
+}   
+
+fn parse_args(name: String, args: Vec<String>) -> Result<()>{
+    let mut counter = 0;
+    for arg in args.iter(){
+        if(counter >= 2){
+            break;
+        }
+
+        match arg.as_str() {
+            "layout" => layout::main(name.clone()),
+            "l" => layout::main(name.clone()),
+            "error" => error::main(name.clone()),
+            "e" => error::main(name.clone()),
+            _ => {
+                println!("Invalid argument: {}", arg);
+            } }
+    }
+
+    Ok(())
 }
 
 fn make_page_file(name: String) -> Result<()> {

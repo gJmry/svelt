@@ -1,7 +1,7 @@
 use crate::controller::create::schematics::*;
 use crate::models::schematic::Schematic;
 
-pub fn match_schematic(schematic_name: String, name: String) {
+pub fn match_schematic(schematic_name: String, name: String, args: Vec<String>) {
     match Schematic::find_by_name(&schematic_name) {
         Some(Schematic::Component) => {
             component::main(name);
@@ -10,7 +10,7 @@ pub fn match_schematic(schematic_name: String, name: String) {
             store::main(name);
         }
         Some(Schematic::Page) => {
-            page::main(name);
+            page::main(name, args);
         }
         Some(Schematic::Service) => {
             service::main(name);

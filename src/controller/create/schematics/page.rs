@@ -66,9 +66,9 @@ fn make_page_file(name: String) -> Result<()> {
 
 fn page_file_configuration(name: String) -> String {
     format!(
-        r#"
-<script></script>
-<style></style>
+        r#"<script>
+
+</script>
 <main>
     {} page
 </main>

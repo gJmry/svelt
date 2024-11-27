@@ -16,7 +16,7 @@ fn make_error_file(name: String) -> Result<()> {
     let path = Path::new(&filename);
 
     if Path::exists(path) {
-        println!("Error  file already exists");
+        println!("Error file already exists");
         std::process::exit(0);
     }
 
@@ -25,7 +25,7 @@ fn make_error_file(name: String) -> Result<()> {
     }
 
     let mut file = File::create(path)?;
-    let content = layout_file_configuration(name);
+    let content = error_file_configuration();
     file.write_all(content.as_bytes())?;
 
     let display_path = filename.replace("\\", "/");
@@ -34,12 +34,14 @@ fn make_error_file(name: String) -> Result<()> {
     Ok(())
 }
 
-fn layout_file_configuration(name: String) -> String {
+fn error_file_configuration() -> String {
     format!(
-        "<main>
-    {}
-    <slot></slot>
-</main>",
-        name
+        "<script>
+    import {{ page }} from '$app/stores';
+</script>
+
+<h1>{{$page.status}}: {{$page.error.message}}</h1>
+",
     )
 }
+

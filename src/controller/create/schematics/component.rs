@@ -17,7 +17,7 @@ fn make_component_file(name: String) -> Result<()> {
 
     if Path::exists(path) {
         println!("Component file already exists");
-        std::process::exit(0);
+        return Ok(());
     }
 
     if let Some(parent) = path.parent() {

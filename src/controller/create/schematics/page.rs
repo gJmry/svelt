@@ -47,7 +47,7 @@ fn make_page_file(name: String) -> Result<()> {
 
     if Path::exists(path) {
         println!("Page file already exists");
-        std::process::exit(0);
+        return Ok(());
     }
 
     if let Some(parent) = path.parent() {

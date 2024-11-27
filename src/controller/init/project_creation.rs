@@ -7,6 +7,7 @@ use std::process::{exit, Command};
 
 pub fn main(project_name: Option<String>) {
     let project_name = project_name.unwrap_or_else(get_project_name);
+    
     let ui_toolkit_name = get_ui_toolkit_name;
     let dev_toolkit_name = get_dev_toolkit_name;
     let test_toolkit_name = get_test_toolkit_name;

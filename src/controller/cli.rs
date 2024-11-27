@@ -44,7 +44,7 @@ pub fn run() {
             Commands::Lint => {}
             Commands::Help => {
                 Cli::command().print_help().unwrap();
-            }
+            },
         }
         None => {
             Cli::command().print_help().unwrap();

@@ -1,4 +1,4 @@
-use crate::controller::create::schematics::{error, layout};
+use crate::controller::create::schematics::{error, layout, param, script, server, style};
 use crate::controller::utils::path_utils;
 use std::fs::{create_dir_all, File};
 use std::io::{Result, Write};
@@ -15,22 +15,27 @@ pub fn main(name: String, args: Vec<String>){
 }   
 
 fn parse_args(name: String, args: Vec<String>) -> Result<()>{
-    let mut counter = 0;
     for arg in args.iter(){
-        if(counter >= 2){
-            break;
-        }
+        let page_name = name.clone();
 
         match arg.as_str() {
-            "layout" => layout::main(name.clone()),
-            "l" => layout::main(name.clone()),
-            "error" => error::main(name.clone()),
-            "e" => error::main(name.clone()),
+            "layout" => layout::main(page_name),
+            "l" => layout::main(page_name),
+            "error" => error::main(page_name),
+            "e" => error::main(page_name),
+            "script" => script::main(page_name, true),
+            "ts" => script::main(page_name, true),
+            "js" => script::main(page_name, false),
+            "param" => param::main(page_name),
+            "p" => param::main(page_name),
+            "css" => style::main(page_name, 0),
+            "scss" => style::main(page_name, 1),
+            "sass" => style::main(page_name, 2),
+            "server" => server::main(page_name),
             _ => {
                 println!("Invalid argument: {}", arg);
             } }
     }
-
     Ok(())
 }
 

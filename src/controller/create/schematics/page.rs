@@ -1,4 +1,4 @@
-use crate::controller::create::schematics::{error, layout, param, script, server, style};
+use crate::controller::create::schematics::{error, layout, script, server, style};
 use crate::controller::utils::path_utils;
 use std::fs::{create_dir_all, File};
 use std::io::{Result, Write};

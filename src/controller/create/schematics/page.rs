@@ -20,9 +20,7 @@ fn parse_args(name: String, args: Vec<String>) -> Result<()>{
 
         match arg.as_str() {
             "layout" => layout::main(page_name),
-            "l" => layout::main(page_name),
             "error" => error::main(page_name),
-            "e" => error::main(page_name),
             "script" => script::main(page_name, true),
             "ts" => script::main(page_name, true),
             "js" => script::main(page_name, false),

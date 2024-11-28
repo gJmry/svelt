@@ -1,10 +1,8 @@
-# CLI Rust for Svelte
+# Svelte-CLI
 
-This project is a **Rust**-based command-line interface (CLI) tool designed to simplify interactions with **Svelte** projects. It helps streamline common tasks and provides an easy way to quickly understand how to integrate essential features into a Svelte project.
+This project is a **Rust**-based command-line interface (CLI) tool designed to simplify interactions with **Svelte** projects.
 
 ## Features
-
-Here is an overview of the main features offered by this CLI:
 
 | Feature                  | Description |
 | ------------------------ | ----------- |
@@ -16,6 +14,10 @@ Here is an overview of the main features offered by this CLI:
 | `update`                  | Updates the project's dependencies. |
 | `lint`                    | Runs a linter on the Svelte code to detect syntax issues. |
 | `test`                    | Runs unit tests to verify project logic. |
+
+### TODO
+
+
 
 ## Installation
 
@@ -31,12 +33,15 @@ Before installing and using this CLI, make sure you have the following tools ins
 Clone this repository and build the project using the following commands:
 
 ```bash
-git clone https://github.com/your-username/cli-rust-svelte.git
-cd cli-rust-svelte
-cargo build --release
+git clone https://github.com/gJmry/svelte-cli
+cd svelte-cli
+cargo install --path .
 ```
 
-This will generate a binary that can be executed from the command line.
+This will add svelte-cli in your terminal, you can use it as 
+```
+svelte-cli <command> <args>
+```
 
 ### Usage
 

@@ -4,20 +4,26 @@ This project is a **Rust**-based command-line interface (CLI) tool designed to s
 
 ## Features
 
-| **Command**              | **Description**                                                          |
-|--------------------------|--------------------------------------------------------------------------|
-| `init [NAME]`             | Initializes a new Svelte project with the specified name.                |
-| `version` / `v`           | Displays the current version of the CLI.                                 |
-| `help` / `h`              | Displays help information about the CLI and its commands.                |
-| `install [PACKAGE] [FLAG]` | Installs a specific package with optional flags.                         |
-| `run [ENV]`               | Runs the project in the specified environment.                           |
-| `dev`                     | Starts a development server for live preview of the project.            |
-| `build`                   | Compiles the Svelte project for production.                              |
-| `lint`                    | Runs the linter to detect syntax issues in the Svelte code.              |
-| `start`                   | Starts the project, typically used for launching the application.       |
-| `update [PACKAGE]`        | Updates the specified package or the entire project.                     |
-| `uninstall [PACKAGE]`     | Uninstalls a specific package from the project.                          |
-| `create [SCHEMATIC] [NAME]` | Generates a new component or file based on a schematic template.        |
+Voici le tableau mis à jour avec une colonne supplémentaire pour indiquer si chaque fonctionnalité est terminée ou non :
+
+---
+
+## Available Commands
+
+| **Command**                 | **Description**                                                          | **Status**      |
+|-----------------------------|--------------------------------------------------------------------------|-----------------|
+| `init [NAME] [PARAM]`       | Initializes a new Svelte project with the specified name.                |🚧|
+| `version` / `v`             | Displays the current version of the CLI.                                 |  ✅  |
+| `help` / `h`                | Displays help information about the CLI and its commands.                |   ✅ |
+| `install [PACKAGE] [FLAG]`  | Installs a specific package with optional flags.                         | ✅ |
+| `run [ENV]`                 | Runs the project in the specified environment.                           | ✅ |
+| `dev`                       | Starts a development server for live preview of the project.            |   ✅ |
+| `build`                     | Compiles the Svelte project for production.                              |  ✅  |
+| `lint`                      | Runs the linter to detect syntax issues in the Svelte code.              |  ✅  |
+| `start`                     | Starts the project, typically used for launching the application.       | ✅ |
+| `update [PACKAGE]`          | Updates the specified package or the entire project.                     | ✅ |
+| `uninstall [PACKAGE]`       | Uninstalls a specific package from the project.                          | ✅ |
+| `create [SCHEMATIC] [NAME]` | Generates a new component or file based on a schematic template.        | 🚧 |
 
 ### TODO
 

@@ -4,8 +4,6 @@ This project is a **Rust**-based command-line interface (CLI) tool designed to s
 
 ## Features
 
-Voici le tableau mis à jour avec une colonne supplémentaire pour indiquer si chaque fonctionnalité est terminée ou non :
-
 ---
 
 ## Available Commands
@@ -51,10 +49,6 @@ Voici le tableau mis à jour avec une colonne supplémentaire pour indiquer si c
 | Parcel             | A zero-config, blazingly fast web application bundler.                                                | ⛔     |
 | Rollup             | A JavaScript module bundler optimized for ES modules.                                                 | ⛔     |
 
-### TODO
-
-
-
 ## Installation
 
 ### Prerequisites
@@ -77,8 +71,6 @@ cargo install --path .
 This will add svelte-cli in your terminal
 
 ### Usage
-
-Once the project is built, you can use the CLI like this:
 
 ```bash
 svelte-cli <command> [arguments]

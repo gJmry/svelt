@@ -43,5 +43,8 @@ pub enum Commands {
 
         #[arg(value_name = "NAME")]
         name: Option<String>,
+
+        #[arg(value_name = "ARGS", num_args = 1.., value_delimiter = ' ')]
+        args: Option<Vec<String>>,
     },
 }

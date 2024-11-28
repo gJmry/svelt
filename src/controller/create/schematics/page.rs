@@ -1,12 +1,38 @@
+use crate::controller::create::schematics::{error, layout, script, server, style};
 use crate::controller::utils::path_utils;
 use std::fs::{create_dir_all, File};
 use std::io::{Result, Write};
 use std::path::Path;
 
-pub fn main(name: String) {
-    if let Err(e) = make_page_file(name) {
+pub fn main(name: String, args: Vec<String>){
+    if let Err(e) = make_page_file(name.clone()) {
         eprintln!("Error: {}", e);
     }
+
+    if let Err(e) = parse_args(name.clone(), args){
+        eprintln!("Error: {}", e);
+    }
+}   
+
+fn parse_args(name: String, args: Vec<String>) -> Result<()>{
+    for arg in args.iter(){
+        let page_name = name.clone();
+
+        match arg.as_str() {
+            "layout" => layout::main(page_name),
+            "error" => error::main(page_name),
+            "script" => script::main(page_name, true),
+            "ts" => script::main(page_name, true),
+            "js" => script::main(page_name, false),
+            "css" => style::main(page_name, 0),
+            "scss" => style::main(page_name, 1),
+            "sass" => style::main(page_name, 2),
+            "server" => server::main(page_name),
+            _ => {
+                println!("Invalid argument: {}", arg);
+            } }
+    }
+    Ok(())
 }
 
 fn make_page_file(name: String) -> Result<()> {
@@ -17,7 +43,7 @@ fn make_page_file(name: String) -> Result<()> {
 
     if Path::exists(path) {
         println!("Page file already exists");
-        std::process::exit(0);
+        return Ok(());
     }
 
     if let Some(parent) = path.parent() {
@@ -36,9 +62,9 @@ fn make_page_file(name: String) -> Result<()> {
 
 fn page_file_configuration(name: String) -> String {
     format!(
-        r#"
-<script></script>
-<style></style>
+        r#"<script>
+
+</script>
 <main>
     {} page
 </main>

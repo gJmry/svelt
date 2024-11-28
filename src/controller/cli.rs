@@ -32,8 +32,8 @@ pub fn run() {
             Commands::Uninstall { package } => {
                 uninstall::main(package);
             }
-            Commands::Create { schematic, name } => {
-                create::main(schematic, name);
+            Commands::Create { schematic, name, args } => {
+                create::main(schematic, name, args);
             }
             Commands::Dev => {
                 run::dev();
@@ -44,7 +44,7 @@ pub fn run() {
             Commands::Lint => {}
             Commands::Help => {
                 Cli::command().print_help().unwrap();
-            }
+            },
         }
         None => {
             Cli::command().print_help().unwrap();

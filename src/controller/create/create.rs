@@ -3,14 +3,15 @@ use crate::controller::utils::path_utils;
 use crate::models::schematic::Schematic;
 use cliclack::{input, select};
 
-pub fn main(schematic: Option<String>, name: Option<String>) {
+pub fn main(schematic: Option<String>, name: Option<String>, args: Option<Vec<String>>) {
     if !path_utils::main() {
         println!("Please use this command when you are in a Svelte Project");
     } else {
         let schematic = schematic.unwrap_or_else(choose_schematic);
         let name = name.unwrap_or_else(|| choose_name(schematic.clone()));
+        let args = args.unwrap_or_else(Vec::new);
 
-        match_schematic(schematic, name);
+        match_schematic(schematic, name, args);
     }
 }
 

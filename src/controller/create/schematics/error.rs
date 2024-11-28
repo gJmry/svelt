@@ -4,19 +4,19 @@ use std::io::{Result, Write};
 use std::path::Path;
 
 pub fn main(name: String) {
-    if let Err(e) = make_component_file(name) {
+    if let Err(e) = make_error_file(name) {
         eprintln!("Error: {}", e);
     }
 }
 
-fn make_component_file(name: String) -> Result<()> {
+fn make_error_file(name: String) -> Result<()> {
     let root_path = path_utils::get_root_path(path_utils::get_current_directory());
 
-    let filename = format!("{}/src/components/{}.svelte", root_path.display(), name);
+    let filename = format!("{}/src/routes/{}/+error.svelte", root_path.display(), name);
     let path = Path::new(&filename);
 
     if Path::exists(path) {
-        println!("Component file already exists");
+        println!("Error file already exists");
         return Ok(());
     }
 
@@ -25,7 +25,7 @@ fn make_component_file(name: String) -> Result<()> {
     }
 
     let mut file = File::create(path)?;
-    let content = component_file_configuration(name);
+    let content = error_file_configuration();
     file.write_all(content.as_bytes())?;
 
     let display_path = filename.replace("\\", "/");
@@ -34,20 +34,14 @@ fn make_component_file(name: String) -> Result<()> {
     Ok(())
 }
 
-fn component_file_configuration(name: String) -> String {
+fn error_file_configuration() -> String {
     format!(
-        r#"<!-- {name}.svelte -->
-<script lang="ts">
-    export let message = "Hello from {name}!";
+        "<script>
+    import {{ page }} from '$app/stores';
 </script>
 
-<style>
-    h1 {{
-        color: #ff3e00;
-    }}
-</style>
-
-<h1>{{ message }}</h1>
-"#
+<h1>{{$page.status}}: {{$page.error.message}}</h1>
+",
     )
 }
+

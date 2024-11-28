@@ -25,7 +25,7 @@ Voici le tableau mis à jour avec une colonne supplémentaire pour indiquer si c
 | `uninstall [PACKAGE]`       | Uninstalls a specific package from the project.                   | ✅ |
 | `uninstall [PACKAGE]`       | Uninstalls a specific package from the project.                   | ✅ |
 | `create [SCHEMATIC] [NAME]` | Generates a new component or file based on a schematic template.  | 🚧 |
-| `add [TOOLKIT]`             | Add a toolkit in your project (check [Toolkits](Toolkits)                 | 🚧 |
+| `add [TOOLKIT]`             | Add a toolkit in your project (check [Toolkits](#toolkits) )              | 🚧 |
 
 ### Toolkits
 | Name               | Description                                                                                           | Status |

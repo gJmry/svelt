@@ -38,38 +38,31 @@ cd svelte-cli
 cargo install --path .
 ```
 
-This will add svelte-cli in your terminal, you can use it as 
-```
-svelte-cli <command> <args>
-```
+This will add svelte-cli in your terminal
 
 ### Usage
 
 Once the project is built, you can use the CLI like this:
 
 ```bash
-./cli-rust-svelte <command> [arguments]
+svelte-cli <command> [arguments]
 ```
 
 For example, to initialize a new Svelte project:
 
 ```bash
-./cli-rust-svelte init my-project
+svelte-cli init my-project
 ```
 
-## Crates Used
+## Dependecies
 
-Here are the main Rust crates used in this project:
-
-- **clap**: Provides an interface for parsing command-line arguments.
-- **serde** and **serde_json**: Used for serialization and deserialization of data, essential for configuration handling.
-- **tokio**: Asynchronous runtime for handling file I/O and networking operations efficiently.
-- **reqwest**: A simple HTTP client for making requests to external services (e.g., for dependency management or fetching templates).
-- **anyhow**: Error handling library that simplifies working with errors.
-
-## Contributing
-
-Contributions are welcome! If you want to report a bug or suggest a feature, feel free to open an issue. If you want to contribute code, please fork the repository and create a pull request.
+| **Crate**        | **Version** | **Description**                                                            |
+|------------------|-------------|----------------------------------------------------------------------------|
+| **cliclack**      | 0.3.5       | A crate for handling command-line input and output.                         |
+| **log**           | 0.4.22      | Provides a flexible logging system for runtime messages.                    |
+| **console**       | 0.15.8      | A crate for beautifying console output, making messages more readable.      |
+| **serde_json**    | 1.0.132     | For serializing and deserializing JSON data.                                |
+| **clap**          | 4.5.20      | A powerful CLI argument parser, supporting features like auto-generated help. |
 
 ## License
 

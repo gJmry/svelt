@@ -19,7 +19,7 @@ fn make_css_file(name: String) -> Result<()> {
     let path = Path::new(&filename);
 
     if Path::exists(path) {
-        println!("css file already exists");
+        println!("Css file already exists");
         return Ok(());
     }
 
@@ -44,7 +44,7 @@ fn make_scss_file(name: String) -> Result<()> {
     let path = Path::new(&filename);
 
     if Path::exists(path) {
-        println!("scss file already exists");
+        println!("Scss file already exists");
         return Ok(());
     }
 
@@ -69,7 +69,7 @@ fn make_sass_file(name: String) -> Result<()>{
     let path = Path::new(&filename);
 
     if Path::exists(path) {
-        println!("sass file already exists");
+        println!("Sass file already exists");
         return Ok(());
     }
 
@@ -88,7 +88,5 @@ fn make_sass_file(name: String) -> Result<()>{
 }
 
 fn style_file_configuration() -> String {
-    format!("body {{
-
-}}")
+    "".to_string()
 }

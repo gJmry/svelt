@@ -175,7 +175,7 @@ fn add_ui_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     }
 }
 
-fn add_dev_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
+fn add_dev_toolkit(toolkit_name: fn() -> &'static str, _project_dir: &str) {
     match toolkit_name() {
         "eslint" => dev_toolkit::eslint::main(),
         "prettier" => dev_toolkit::prettier::main(),
@@ -185,7 +185,7 @@ fn add_dev_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     }
 }
 
-fn add_test_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
+fn add_test_toolkit(toolkit_name: fn() -> &'static str, _project_dir: &str) {
     match toolkit_name() {
         "jest" => test_toolkit::jest::main(),
         "mocha" => test_toolkit::mocha::main(),
@@ -195,7 +195,7 @@ fn add_test_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
     }
 }
 
-fn add_build_toolkit(toolkit_name: fn() -> &'static str, project_dir: &str) {
+fn add_build_toolkit(toolkit_name: fn() -> &'static str, _project_dir: &str) {
     match toolkit_name() {
         "webpack" => build_toolkit::webpack::main(),
         "vite" => build_toolkit::vite::main(),

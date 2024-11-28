@@ -1,9 +1,8 @@
-use std::fs::{self, OpenOptions};
-use std::process::{Command, exit};
-use std::io::{self, Write};
-use std::path::Path;
 use crate::{NPM, NPX};
-use crate::controller::utils::path_utils::{get_current_directory, get_root_path};
+use std::fs::{self, OpenOptions};
+use std::io::Write;
+use std::path::Path;
+use std::process::{exit, Command};
 
 pub fn main(project_dir: &str) {
     configure_tailwind(project_dir);

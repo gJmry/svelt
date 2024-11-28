@@ -4,16 +4,20 @@ This project is a **Rust**-based command-line interface (CLI) tool designed to s
 
 ## Features
 
-| Feature                  | Description |
-| ------------------------ | ----------- |
-| `init`                    | Initializes a new Svelte project with a basic structure. |
-| `dev`                     | Starts a development server to see changes live. |
-| `build`                   | Compiles the Svelte project for production. |
-| `serve`                   | Serves the built project in a production environment. |
-| `add <component>`         | Adds a specific Svelte component to your project. |
-| `update`                  | Updates the project's dependencies. |
-| `lint`                    | Runs a linter on the Svelte code to detect syntax issues. |
-| `test`                    | Runs unit tests to verify project logic. |
+| **Command**              | **Description**                                                          |
+|--------------------------|--------------------------------------------------------------------------|
+| `init [NAME]`             | Initializes a new Svelte project with the specified name.                |
+| `version` / `v`           | Displays the current version of the CLI.                                 |
+| `help` / `h`              | Displays help information about the CLI and its commands.                |
+| `install [PACKAGE] [FLAG]` | Installs a specific package with optional flags.                         |
+| `run [ENV]`               | Runs the project in the specified environment.                           |
+| `dev`                     | Starts a development server for live preview of the project.            |
+| `build`                   | Compiles the Svelte project for production.                              |
+| `lint`                    | Runs the linter to detect syntax issues in the Svelte code.              |
+| `start`                   | Starts the project, typically used for launching the application.       |
+| `update [PACKAGE]`        | Updates the specified package or the entire project.                     |
+| `uninstall [PACKAGE]`     | Uninstalls a specific package from the project.                          |
+| `create [SCHEMATIC] [NAME]` | Generates a new component or file based on a schematic template.        |
 
 ### TODO
 

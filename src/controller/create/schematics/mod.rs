@@ -6,5 +6,4 @@ pub mod store;
 pub mod error;
 pub mod style;
 pub mod script;
-pub mod param;
 pub mod server;

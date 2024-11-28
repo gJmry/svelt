@@ -26,8 +26,6 @@ fn parse_args(name: String, args: Vec<String>) -> Result<()>{
             "script" => script::main(page_name, true),
             "ts" => script::main(page_name, true),
             "js" => script::main(page_name, false),
-            "param" => param::main(page_name),
-            "p" => param::main(page_name),
             "css" => style::main(page_name, 0),
             "scss" => style::main(page_name, 1),
             "sass" => style::main(page_name, 2),

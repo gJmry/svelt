@@ -9,6 +9,17 @@ projects.
 
 ## Available Commands
 
+### Status Legends
+
+| **Emoji** | **Status**  |
+|-----------|-------------|
+| ✅         | Finished    |
+| 🩹        | Fixing      |
+| 🚧        | In progress |
+| ⛔         | Not started |
+
+### Commands
+
 | **Command**                 | **Description**                                                   | **Status** |
 |-----------------------------|-------------------------------------------------------------------|------------|
 | `init [NAME] [TOOLKIT]`     | Initializes a new Svelte project with the specified name.         | 🚧         |
@@ -63,7 +74,7 @@ projects.
 | Error     | Add +error.svelte file in route                                      | ✅      |
 | Script    | Add .ts file by default (otherwise use js)                           | ✅      |
 | Css       | Add .css file by default (otherwise use sass, or scss)               | ✅      |
-| Server    | Add +page.server.ts file in route                                    | ✅      |
+| Server    | Add +page.server.ts file in route                                    | ✅      |-
 
 ## Installation
 

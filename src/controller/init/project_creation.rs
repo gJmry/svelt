@@ -50,9 +50,9 @@ fn get_ui_toolkit_name() -> &'static str {
         .initial_value("None")
         .item("None", "None", "No UI toolkit. It's all up to you!")
         .item("tailwind", "Tailwind", "A utility-first CSS framework for rapid UI development.")
-        .item("bootstrap", "Bootstrap", "A popular CSS framework with a lot of pre-built components.")
-        .item("skeleton", "Skeleton", "A lightweight CSS framework for minimalistic designs.")
-        .item("flowbite", "Flowbite", "A UI kit based on Tailwind CSS with ready-to-use components.")
+        .item("bootstrap", "SvelteStrap", "A popular CSS framework for Svelte with a lot of pre-built components.")
+        .item("skeleton", "Skeleton", "A lightweight CSS framework for minimalistic designs (Includes Tailwind).")
+        .item("flowbite", "Flowbite", "A UI kit based on Tailwind CSS with ready-to-use components (Includes Tailwind).")
         .interact()
         .unwrap()
 }

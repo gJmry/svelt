@@ -95,9 +95,8 @@ fn get_build_toolkit_name() -> &'static str {
 fn add_ui_toolkit(toolkit_name: &str, project_dir: &str) {
     match toolkit_name.as_ref() {
         "skeleton" => ui_toolkit::skeleton::main(),
-        "flowbite" => ui_toolkit::flowbite::main(),
+        "flowbite" => ui_toolkit::flowbite::main(&project_dir),
         "tailwind" => ui_toolkit::tailwind::main(&project_dir),
-        "bootstrap" => ui_toolkit::bootstrap::main(),
         _ => {}
     }
 }

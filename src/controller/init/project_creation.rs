@@ -166,6 +166,10 @@ fn open_project(project_name: String) {
     fs::remove_dir_all(".git").expect("Error when deleting .git directory");
 
     Command::new(NPM)
+        .arg("install")
+        .status()
+        .expect("Failed to install packages");
+    Command::new(NPM)
         .arg("run")
         .arg("dev")
         .status()

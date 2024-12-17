@@ -41,11 +41,11 @@ projects.
 
 | Name                            | Description                                                                           | Status |
 |---------------------------------|---------------------------------------------------------------------------------------|--------|
-| **UI Toolkits**                 |                                                                                       | 🚧     |
-| Tailwind                        | A utility-first CSS framework for rapid UI development.                               | 🚧     |
+| **UI Toolkits**                 |                                                                                       |✅🚧     |
+| Tailwind                        | A utility-first CSS framework for rapid UI development.                               | ✅     |
 | Bootstrap                       | A popular CSS framework with a lot of pre-built components.                           | ⛔      |
 | Skeleton                        | A lightweight CSS framework for minimalistic designs.                                 | ⛔      |
-| Flowbite                        | A UI kit based on Tailwind CSS with ready-to-use components.                          | ⛔      |
+| Flowbite                        | A UI kit based on Tailwind CSS with ready-to-use components.                          | ✅      |
 | **Development Toolkits**        |                                                                                       | ⛔      |
 | ESLint                          | A popular linter for identifying and fixing JavaScript/TypeScript issues.             | ⛔      |
 | Prettier                        | An opinionated code formatter that supports multiple languages.                       | ⛔      |

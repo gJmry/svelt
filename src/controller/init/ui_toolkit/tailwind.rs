@@ -9,9 +9,19 @@ pub fn main(project_dir: &str) {
 }
 
 fn configure_tailwind(project_dir: &str) {
+    let config_code = r#"/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+};
+"#;
+
     install_tailwind(project_dir);
     init_tailwind(project_dir);
-    update_tailwindconfig(project_dir);
+    update_tailwindconfig(project_dir, config_code);
     create_tailwind_css(project_dir);
     update_layout_svelte(project_dir);
     update_svelteconfig(project_dir);
@@ -71,7 +81,7 @@ export default config;"#;
 }
 
 
-fn update_tailwindconfig(project_dir: &str) {
+pub fn update_tailwindconfig(project_dir: &str, config_code: &str) {
     let tailwind_config_path = Path::new(project_dir).join("tailwind.config.js");
 
     let mut tailwind_config = match OpenOptions::new().write(true).create(true).open(&tailwind_config_path) {
@@ -81,16 +91,6 @@ fn update_tailwindconfig(project_dir: &str) {
             exit(1);
         }
     };
-
-    let config_code = r#"/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  theme: {
-    extend: {}
-  },
-  plugins: []
-};
-"#;
 
     writeln!(tailwind_config, "{}", config_code).expect("Failed to write to tailwind.config.js");
 }

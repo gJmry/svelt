@@ -12,9 +12,9 @@ pub fn main(project_name: Option<String>) {
     println!("{}", "🔧 Setting up your project...".bold().yellow());
 
     let ui_toolkit_name = get_ui_toolkit_name();
-    let dev_toolkit_name = get_dev_toolkit_name();
-    let test_toolkit_name = get_test_toolkit_name();
-    let build_toolkit_name = get_build_toolkit_name();
+    // let dev_toolkit_name = get_dev_toolkit_name();
+    // let test_toolkit_name = get_test_toolkit_name();
+    // let build_toolkit_name = get_build_toolkit_name();
     let project_dir = make_svelte_project(project_name);
 
     add_ui_toolkit(ui_toolkit_name, &project_dir);
@@ -50,7 +50,7 @@ fn get_ui_toolkit_name() -> &'static str {
         .initial_value("None")
         .item("None", "None", "No UI toolkit. It's all up to you!")
         .item("tailwind", "Tailwind", "A utility-first CSS framework for rapid UI development.")
-        .item("skeleton", "Skeleton", "A lightweight CSS framework for minimalistic designs (Includes Tailwind).")
+        // .item("skeleton", "Skeleton", "A lightweight CSS framework for minimalistic designs (Includes Tailwind).")
         .item("flowbite", "Flowbite", "A UI kit based on Tailwind CSS with ready-to-use components (Includes Tailwind).")
         .interact()
         .unwrap()

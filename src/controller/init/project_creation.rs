@@ -18,9 +18,9 @@ pub fn main(project_name: Option<String>) {
     let project_dir = make_svelte_project(project_name);
 
     add_ui_toolkit(ui_toolkit_name, &project_dir);
-    add_dev_toolkit(dev_toolkit_name, &project_dir);
-    add_test_toolkit(test_toolkit_name, &project_dir);
-    add_build_toolkit(build_toolkit_name, &project_dir);
+    // add_dev_toolkit(dev_toolkit_name, &project_dir);
+    // add_test_toolkit(test_toolkit_name, &project_dir);
+    // add_build_toolkit(build_toolkit_name, &project_dir);
 
     println!("{}", "🚀 Project setup complete!".bold().green());
 
@@ -94,7 +94,7 @@ fn get_build_toolkit_name() -> &'static str {
 
 fn add_ui_toolkit(toolkit_name: &str, project_dir: &str) {
     match toolkit_name.as_ref() {
-        "skeleton" => ui_toolkit::skeleton::main(),
+        // "skeleton" => ui_toolkit::skeleton::main(),
         "flowbite" => ui_toolkit::flowbite::main(&project_dir),
         "tailwind" => ui_toolkit::tailwind::main(&project_dir),
         _ => {}

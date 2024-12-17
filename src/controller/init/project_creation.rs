@@ -56,7 +56,7 @@ fn get_ui_toolkit_name() -> &'static str {
         .unwrap()
 }
 
-fn get_dev_toolkit_name() -> &'static str {
+fn _get_dev_toolkit_name() -> &'static str {
     select("Pick a Development Toolkit".to_string())
         .initial_value("None")
         .item("None", "None", "No development toolkit selected.")
@@ -68,7 +68,7 @@ fn get_dev_toolkit_name() -> &'static str {
         .unwrap()
 }
 
-fn get_test_toolkit_name() -> &'static str {
+fn _get_test_toolkit_name() -> &'static str {
     select("Pick a Testing Toolkit".to_string())
         .initial_value("None")
         .item("None", "None", "No testing toolkit selected.")
@@ -80,7 +80,7 @@ fn get_test_toolkit_name() -> &'static str {
         .unwrap()
 }
 
-fn get_build_toolkit_name() -> &'static str {
+fn _get_build_toolkit_name() -> &'static str {
     select("Pick a Build & Deployment Toolkit".to_string())
         .initial_value("None")
         .item("None", "None", "No build toolkit selected.")
@@ -101,32 +101,32 @@ fn add_ui_toolkit(toolkit_name: &str, project_dir: &str) {
     }
 }
 
-fn add_dev_toolkit(toolkit_name: &str, _project_dir: &str) {
+fn _add_dev_toolkit(toolkit_name: &str, _project_dir: &str) {
     match toolkit_name.as_ref() {
-        "eslint" => dev_toolkit::eslint::main(),
-        "prettier" => dev_toolkit::prettier::main(),
-        "husky" => dev_toolkit::husky::main(),
-        "lint-staged" => dev_toolkit::lint_staged::main(),
+        "eslint" => dev_toolkit::eslint::_main(),
+        "prettier" => dev_toolkit::prettier::_main(),
+        "husky" => dev_toolkit::husky::_main(),
+        "lint-staged" => dev_toolkit::lint_staged::_main(),
         _ => {}
     }
 }
 
-fn add_test_toolkit(toolkit_name: &str, _project_dir: &str) {
+fn _add_test_toolkit(toolkit_name: &str, _project_dir: &str) {
     match toolkit_name.as_ref() {
-        "jest" => test_toolkit::jest::main(),
-        "mocha" => test_toolkit::mocha::main(),
-        "cypress" => test_toolkit::cypress::main(),
-        "jasmine" => test_toolkit::jasmine::main(),
+        "jest" => test_toolkit::jest::_main(),
+        "mocha" => test_toolkit::mocha::_main(),
+        "cypress" => test_toolkit::cypress::_main(),
+        "jasmine" => test_toolkit::jasmine::_main(),
         _ => {}
     }
 }
 
-fn add_build_toolkit(toolkit_name: &str, _project_dir: &str) {
+fn _add_build_toolkit(toolkit_name: &str, _project_dir: &str) {
     match toolkit_name.as_ref() {
-        "webpack" => build_toolkit::webpack::main(),
-        "vite" => build_toolkit::vite::main(),
-        "parcel" => build_toolkit::parcel::main(),
-        "rollup" => build_toolkit::rollup::main(),
+        "webpack" => build_toolkit::webpack::_main(),
+        "vite" => build_toolkit::vite::_main(),
+        "parcel" => build_toolkit::parcel::_main(),
+        "rollup" => build_toolkit::rollup::_main(),
         _ => {}
     }
 }

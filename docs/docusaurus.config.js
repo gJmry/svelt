@@ -81,9 +81,10 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Introduction',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/docs/category/commands', label: 'Commands', position: 'left'},
+          {to: 'https:///blog.gjeremy.dev', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',

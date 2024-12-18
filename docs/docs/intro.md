@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# 📝 Introduction
 
 <table>
 <tr>
@@ -54,25 +54,3 @@ Add useful toolkits to your project to enhance your development experience:
 - **Predefined Templates**: Use schematics to generate components, services, pages, and more.
 - **Debugging and Error Handling**: Advanced error handling and logging to help you debug your project effectively.
 
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-To use **Svelte-CLI**, ensure you have the following tools installed:
-
-- **Rust**: Install Rust by following the instructions at [rust-lang.org](https://www.rust-lang.org/).
-- **Node.js** and **npm**: Required for managing dependencies and running the development server.
-
-### Install the CLI
-
-Clone the repository and build the project using the following commands:
-
-```bash
-git clone https://github.com/gJmry/svelte-cli
-cd svelte-cli
-cargo install --path .
-```
-
-After installation, `svelte-cli` will be available in your terminal.

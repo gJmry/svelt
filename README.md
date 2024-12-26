@@ -1,4 +1,4 @@
-# Svelte-CLI
+# Svelt
 
 This project is a **Rust**-based command-line interface (CLI) tool designed to simplify interactions with **Svelte**
 projects.
@@ -95,18 +95,18 @@ cd svelte-cli
 cargo install --path .
 ```
 
-This will add svelte-cli in your terminal
+This will add Svelt in your terminal
 
 ### Usage
 
 ```bash
-svelte-cli <command> [arguments]
+svelt <command> [arguments]
 ```
 
 For example, to initialize a new Svelte project:
 
 ```bash
-svelte-cli init my-project
+svelt init my-project
 ```
 
 ## Dependecies

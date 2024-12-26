@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # Initialize your project
 
-## 🌟 Introduction to `init`
+## 🌟 Learn how to initialize your project and add packages
 
-The `init` command is the starting point for creating a new **Svelte** project using the **Svelte-CLI** tool. It allows you to quickly set up a new project with a specified name and optional toolkit integration, making it easy to get started with Svelte development.
+The `init` command is the starting point for creating a new **Svelte** project using the **Svelt** tool. It allows you to quickly set up a new project with a specified name and optional toolkit integration, making it easy to get started with Svelte development.
 
 This command is ideal for developers who want to avoid the hassle of manual project setup. With just one command, you can initialize a new project and choose which toolkit you'd like to integrate (such as **Tailwind CSS** or **Flowbite**).
 
@@ -17,7 +17,7 @@ This command is ideal for developers who want to avoid the hassle of manual proj
 ### Command Syntax
 
 ```bash
-svelte-cli init [PROJECT_NAME] [TOOLKIT]
+svelt init [PROJECT_NAME] [TOOLKIT]
 ```
 
 - **`PROJECT_NAME`**: The name of your new Svelte project.
@@ -26,7 +26,7 @@ svelte-cli init [PROJECT_NAME] [TOOLKIT]
 ### Examples
 
 ```shell
-svelte-cli init my-new-project
+svelt init my-new-project
 ```
 
 This will create a new project named **my-new-project** using the default Svelte setup
@@ -73,9 +73,9 @@ When using the `init` command, you can specify one of the following toolkits:
 ### UI Toolkits
 
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-    - Command Example: `svelte-cli init my-tailwind-project tailwind`
+    - Command Example: `svelt init my-tailwind-project tailwind`
 - **Flowbite**: A UI kit based on Tailwind CSS with ready-to-use components.
-    - Command Example: `svelte-cli init my-flowbite-project flowbite`
+    - Command Example: `svelt init my-flowbite-project flowbite`
 
 *Note: More toolkits will be added in future updates. Check the documentation for the latest options.*
 
@@ -86,7 +86,7 @@ When using the `init` command, you can specify one of the following toolkits:
 ### I ran the `init` command, but my project isn’t working. What should I do?
 
 - Ensure you have **Node.js** and **npm** installed. These are required to manage dependencies for the Svelte project.
-- Verify your `svelte-cli` installation by running `svelte-cli version` to make sure it’s correctly installed.
+- Verify your `svelt-cli` installation by running `svelt version` to make sure it’s correctly installed.
 - If you chose a toolkit, check that the respective dependencies are installed correctly by inspecting your `package.json`.
 
 ### How do I update my project after initializing it?
@@ -94,7 +94,7 @@ When using the `init` command, you can specify one of the following toolkits:
 You can update your project dependencies by using the `update` command:
 
 ```bash
-svelte-cli update
+svelt update
 ```
 
 This will update the project dependencies to the latest versions as per your configuration.

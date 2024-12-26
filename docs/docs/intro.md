@@ -10,20 +10,20 @@ sidebar_position: 1
 
 <br/>
 
-# 💾 What is Svelte-CLI?
+# 💾 What is Svelt?
 
 <hr />
 
-**Svelte-CLI** is a powerful **command-line tool** designed to make working with **[Svelte](https://svelte.dev/)** projects easier and more efficient. Written in **Rust**, it provides a streamlined way to manage your Svelte projects, handle dependencies, and automate common tasks like building, generating components, and starting servers.
+**Svelt** is a powerful **command-line tool** designed to make working with **[Svelte](https://svelte.dev/)** projects easier and more efficient. Written in **Rust**, it provides a streamlined way to manage your Svelte projects, handle dependencies, and automate common tasks like building, generating components, and starting servers.
 
-With built-in features like project initialization, dependency management, component generation, and a rich development environment, **Svelte-CLI** is perfect for developers who want to focus on writing code rather than configuring their environment. Just follow the **[installation](#installation)** and **[usage](#usage)** instructions to get started and run your project in no time!
+With built-in features like project initialization, dependency management, component generation, and a rich development environment, **Svelt** is perfect for developers who want to focus on writing code rather than configuring their environment. Just follow the **[installation](#installation)** and **[usage](#usage)** instructions to get started and run your project in no time!
 
 </td>
 </tr>
 </table>
 ## 📜 Features
 
-**Svelte-CLI** comes packed with several features that make managing and building Svelte projects a breeze:
+**Svelt** comes packed with several features that make managing and building Svelte projects a breeze:
 
 ### Project Management
 

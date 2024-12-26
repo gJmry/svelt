@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Svelte-CLI',
+  title: 'Svelt',
   tagline: 'A powerful, feature-rich CLI for Svelte, built with Rust',
   favicon: 'img/favicon.ico',
 
@@ -71,7 +71,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Svelte-CLI',
+        title: 'Svelt',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -83,8 +83,9 @@ const config = {
             position: 'left',
             label: 'Introduction',
           },
+          {to: '/docs/installation', label: 'Installation', position: 'left'},
           {to: '/docs/category/commands', label: 'Commands', position: 'left'},
-          {to: 'https:///blog.gjeremy.dev', label: 'Blog', position: 'left'},
+          {to: 'https:///blog.gjeremy.dev', label: 'Blog', position: 'right'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',

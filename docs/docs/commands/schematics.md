@@ -71,22 +71,30 @@ svelt create layout blog
 
 ---
 
-### 📐 Add an Error
+### 🛑 Add an Error
 
 ```bash
 svelt create error blog
 ```
 
-- 🖼️ Adds a `+error.svelte` file to the blog route.
+- ❌ Adds a `+error.svelte` file to the blog route.
 
 ---
 
-### Service
+### ⚙️ Create a Service
+
 ```bash
 svelt create service commands
 ```
 
-- 🖼️ Adds a `commands.js` file to a /service directory.
+- 🛠️ Adds a `commands.js` file to the `/service` directory.
+- Default format is JavaScript; add the `--ts` flag to generate TypeScript:
+
+```bash
+svelt create service commands --ts
+```
+
+---
 
 ### 🖥️ Add a Server-Side File
 
@@ -105,4 +113,8 @@ svelt create css styles
 ```
 
 - 🖌️ Creates a `styles.css` file in the `/styles` directory.
-- Use the `--sass` or `--scss` flag to generate `styles.sass` or `styles.scss`.
+- Use the `--sass` or `--scss` flag to generate `styles.sass` or `styles.scss`:
+
+```bash
+svelt create css styles --scss
+```

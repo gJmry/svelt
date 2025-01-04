@@ -86,7 +86,7 @@ When using the `init` command, you can specify one of the following toolkits:
 ### I ran the `init` command, but my project isn’t working. What should I do?
 
 - Ensure you have **Node.js** and **npm** installed. These are required to manage dependencies for the Svelte project.
-- Verify your `svelt-cli` installation by running `svelt version` to make sure it’s correctly installed.
+- Verify your `svelt` installation by running `svelt version` to make sure it’s correctly installed.
 - If you chose a toolkit, check that the respective dependencies are installed correctly by inspecting your `package.json`.
 
 ### How do I update my project after initializing it?

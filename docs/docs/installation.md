@@ -15,7 +15,7 @@ To use **Svelt**, ensure you have the following tools installed:
 
 Clone the repository and build the project using the following commands:
 
-```bash
+```npm bash
 git clone https://github.com/gJmry/svelte-cli
 cd svelte-cli
 cargo install --path .

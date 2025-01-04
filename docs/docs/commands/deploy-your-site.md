@@ -2,30 +2,107 @@
 sidebar_position: 5
 ---
 
-# Deploy your site
+# Schematics
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+In SvelteKit, you have a variety of schematics, each serving a specific purpose. With the **Svelt CLI**, you can easily generate these schematics using straightforward commands to streamline your development process. 🚀
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
-
-## Build your site
-
-Build your site **for production**:
+### General Syntax
 
 ```bash
-npm run build
+svelt create [SCHEMATIC] [NAME] [OPTIONS]
 ```
 
-The static files are generated in the `build` folder.
+- **SCHEMATIC**: The type of file or structure you want to generate (e.g., `component`, `store`). 🧩
+- **NAME**: The name of the file or feature you want to create. ✏️
+- **OPTIONS**: Additional options to customize the generated output. ⚙️
 
-## Deploy your site
+---
 
-Test your production build locally:
+### 🗂️ Create a Store
 
 ```bash
-npm run serve
+svelt create store myStore
 ```
 
-The `build` folder is now served at [http://localhost:3000/](http://localhost:3000/).
+- 📂 Generates a new file `myStore.js` in the `/stores` directory.
+- Default format is JavaScript; add the `--ts` flag to generate TypeScript:
 
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+```bash
+svelt create store myStore --ts
+```
+
+---
+
+### 🛠️ Create a Component
+
+```bash
+svelt create component Button
+```
+
+- 📁 Creates a `Button.svelte` file in the `/components` directory.
+
+---
+
+### 🌐 Generate a Page
+
+```bash
+svelt create page about
+```
+
+- 🗺️ Creates a new `+page.svelte` file in `/routes/about/`.
+
+To include route parameters:
+
+```bash
+svelt create page [id]
+```
+
+- 🛤️ This generates `/routes/[id]/+page.svelte`.
+
+---
+
+### 📐 Add a Layout
+
+```bash
+svelt create layout blog
+```
+
+- 🖼️ Adds a `+layout.svelte` file to the blog route.
+
+---
+
+### 📐 Add an Error
+
+```bash
+svelt create error blog
+```
+
+- 🖼️ Adds a `+error.svelte` file to the blog route.
+
+---
+
+### Service
+```bash
+svelt create service commands
+```
+
+- 🖼️ Adds a `commands.js` file to a /service directory.
+
+### 🖥️ Add a Server-Side File
+
+```bash
+svelt create server blog
+```
+
+- 🛡️ Creates a `+page.server.ts` file for the blog route.
+
+---
+
+### 🎨 Generate a CSS File
+
+```bash
+svelt create css styles
+```
+
+- 🖌️ Creates a `styles.css` file in the `/styles` directory.
+- Use the `--sass` or `--scss` flag to generate `styles.sass` or `styles.scss`.

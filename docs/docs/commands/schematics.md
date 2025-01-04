@@ -2,119 +2,161 @@
 sidebar_position: 5
 ---
 
-# Schematics
+# Schematics Guide
 
-In SvelteKit, you have a variety of schematics, each serving a specific purpose. With the **Svelt CLI**, you can easily generate these schematics using straightforward commands to streamline your development process. 🚀
+The **Svelt CLI** is your tool for quickly generating files and structures in SvelteKit projects. Whether you're creating pages, stores, or services, the CLI provides a fast and efficient way to set up your project with consistent patterns. 🚀
 
-### General Syntax
+## General Syntax 🛠️
 
 ```bash
 svelt create [SCHEMATIC] [NAME] [OPTIONS]
 ```
 
-- **SCHEMATIC**: The type of file or structure you want to generate (e.g., `component`, `store`). 🧩
-- **NAME**: The name of the file or feature you want to create. ✏️
-- **OPTIONS**: Additional options to customize the generated output. ⚙️
+- **SCHEMATIC**: The type of file or structure to generate (e.g., `page`, `store`, `service`). 🧩
+- **NAME**: The name of the feature you want to create. ✏️
+- **OPTIONS**: Additional flags to customize the generated files (e.g., `layout`, `error`, `css`, etc.). ⚙️
 
 ---
 
-### 🗂️ Create a Store
+## Creating Pages and Additional Files 🌐
+
+### Basic Page Creation
+
+```bash
+svelt create page blog
+```
+
+- 🗺️ Creates a `+page.svelte` file in the `/routes/blog` directory.
+- Ideal for setting up a standalone page.
+
+### Adding Multiple Files to a Route
+
+You can extend a route with additional files by including multiple schematic names in a single command. For example:
+
+```bash
+svelt create page blog layout error ts css
+```
+
+This command generates the following in `/routes/blog`:
+
+- `+page.svelte`: The main page file.
+- `+layout.svelte`: A layout file for the route.
+- `+error.svelte`: An error handling file.
+- `+page.ts`: A TypeScript server-side file.
+- `+page.css`: A CSS file for the page.
+
+For the `svelt create page` command, you can use the following options to add specific files to your route:
+
+- `layout`
+- `error`
+- `script`
+- `ts`
+- `js`
+- `css`
+- `scss`
+- `sass`
+- `server`
+
+
+---
+
+## Generating Other Files 📁
+
+### Creating a Store
 
 ```bash
 svelt create store myStore
 ```
 
-- 📂 Generates a new file `myStore.js` in the `/stores` directory.
-- Default format is JavaScript; add the `--ts` flag to generate TypeScript:
-
-```bash
-svelt create store myStore --ts
-```
+- 📂 Generates `myStore.js` in the `/stores` directory.
 
 ---
 
-### 🛠️ Create a Component
+### Creating a Component
 
 ```bash
 svelt create component Button
 ```
 
-- 📁 Creates a `Button.svelte` file in the `/components` directory.
+- 📁 Creates `Button.svelte` in the `/components` directory.
 
 ---
 
-### 🌐 Generate a Page
+### Creating a Service
+
+```bash
+svelt create service api
+```
+
+- 🛠️ Generates an `api.js` file in the `/services` directory.
+
+---
+
+### File Type Defaults
+
+- Pages, layouts, and error files can include additional options like `ts` (TypeScript) or `css` (CSS).
+- Stores and services are always generated as `.js` files.
+- Components are always `.svelte` files.
+
+---
+
+## Examples 📚
+
+### Example 1: Simple Page Creation
 
 ```bash
 svelt create page about
 ```
 
-- 🗺️ Creates a new `+page.svelte` file in `/routes/about/`.
-
-To include route parameters:
-
-```bash
-svelt create page [id]
-```
-
-- 🛤️ This generates `/routes/[id]/+page.svelte`.
+- Creates:
+    - `/routes/about/+page.svelte`
 
 ---
 
-### 📐 Add a Layout
+### Example 2: Full Route Setup
 
 ```bash
-svelt create layout blog
+svelt create page blog layout error ts css
 ```
 
-- 🖼️ Adds a `+layout.svelte` file to the blog route.
+- Creates:
+    - `/routes/blog/+page.svelte`
+    - `/routes/blog/+layout.svelte`
+    - `/routes/blog/+error.svelte`
+    - `/routes/blog/+page.ts`
+    - `/routes/blog/+page.css`
 
 ---
 
-### 🛑 Add an Error
+### Example 3: Adding a Store
 
 ```bash
-svelt create error blog
+svelt create store userStore
 ```
 
-- ❌ Adds a `+error.svelte` file to the blog route.
+- Creates:
+    - `/stores/userStore.js`
 
 ---
 
-### ⚙️ Create a Service
+### Example 4: Creating a Component
 
 ```bash
-svelt create service commands
+svelt create component Header
 ```
 
-- 🛠️ Adds a `commands.js` file to the `/service` directory.
-- Default format is JavaScript; add the `--ts` flag to generate TypeScript:
-
-```bash
-svelt create service commands --ts
-```
+- Creates:
+    - `/components/Header.svelte`
 
 ---
 
-### 🖥️ Add a Server-Side File
+### Example 5: Adding a Service
 
 ```bash
-svelt create server blog
+svelt create service fetchData
 ```
 
-- 🛡️ Creates a `+page.server.ts` file for the blog route.
+- Creates:
+    - `/services/fetchData.js`
 
 ---
-
-### 🎨 Generate a CSS File
-
-```bash
-svelt create css styles
-```
-
-- 🖌️ Creates a `styles.css` file in the `/styles` directory.
-- Use the `--sass` or `--scss` flag to generate `styles.sass` or `styles.scss`:
-
-```bash
-svelt create css styles --scss
-```

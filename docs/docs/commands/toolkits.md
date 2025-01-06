@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Toolkits
 
-When initializing your Svelte project using the `svelte init` command, you have the option to add a **UI Toolkit** to streamline your development process. 🚀
+When initializing your Svelte project using the `svelte init` command, you have the option to add a **Toolkit**. 🚀
 
 ## 🎨 Available UI Toolkits
 

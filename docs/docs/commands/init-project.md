@@ -19,7 +19,7 @@ svelt init [PROJECT_NAME] [TOOLKIT]
 ```
 
 - **`PROJECT_NAME`**: The name of your new Svelte project.
-- **`TOOLKIT`** (optional): The toolkit to integrate with the project (e.g., `tailwind`, `flowbite`).
+- **`TOOLKIT`** (optional): The toolkit to integrate with the project ([List of every Toolkits available](toolkits.md)).
 
 ### Examples
 

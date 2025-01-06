@@ -13,6 +13,8 @@ To use **Svelt**, ensure you have the following tools installed:
 
 ## Install the CLI
 
+### Using Github
+
 Clone the repository and build the project using the following commands:
 
 ```npm bash
@@ -21,4 +23,11 @@ cd svelte-cli
 cargo install --path .
 ```
 
+### Using NPM
+
+### Using Yarn
+
+### Using Brew
+
 After installation, `svelt` will be available in your terminal.
+

@@ -25,6 +25,10 @@ cargo install --path .
 
 ### Using NPM
 
+```npm bash
+npm install -g @gjrmy/svelt
+```
+
 ### Using Yarn
 
 ### Using Brew

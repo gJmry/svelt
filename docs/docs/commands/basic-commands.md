@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # Basic commands
 
+Here are the basic commands available in the CLI. Most of them are essentially "enhanced" npm commands, so feel free to explore them! 🚀
+
 ### `version` / `v`
 Displays the current version of the CLI.
 

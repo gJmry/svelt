@@ -1,0 +1,147 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Root color variables for Light Mode (White Mode) */
+:root {
+  --ifm-color-primary: #FF8C42; /* Orange léger, subtil */
+  --ifm-color-primary-dark: #E57228; /* Orange plus foncé pour les accents */
+  --ifm-color-primary-darker: #D56E1E; /* Orange encore plus foncé pour les hover ou états actifs */
+  --ifm-color-primary-light: #FF9C5A; /* Orange doux pour le texte ou les highlights */
+  --ifm-color-primary-lighter: #FFB677; /* Orange très doux, presque pastel */
+  --ifm-color-primary-lightest: #FFD0A1; /* Teinte d'orange très claire, presque pêche */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 140, 66, 0.2); /* Fond de ligne de code en orange clair */
+}
+
+
+/* Dark mode color adjustments */
+[data-theme='dark'] {
+  --ifm-color-primary: #FF7F32; /* Slightly darker orange */
+  --ifm-color-primary-dark: #e0671f; /* Darker orange for accents */
+  --ifm-color-primary-darker: #b85e2d; /* Even darker orange for hover or active states */
+  --ifm-color-primary-darkest: #8c3e1d; /* Very dark orange for dark mode */
+  --ifm-color-primary-light: #ff9f5a; /* Soft orange for text */
+  --ifm-color-primary-lighter: #ffb17f; /* Lighter orange for highlights */
+  --ifm-color-primary-lightest: #ffcc99; /* Soft peach for dark mode highlights */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 69, 0, 0.3); /* Darker orange for highlighted lines */
+}
+
+/* White Mode (Light mode) styling */
+body {
+  background-color: #FFFFFF; /* Pure white background */
+  color: #333333; /* Dark gray text */
+  margin: 0;
+  font-family: Arial, sans-serif; /* Clean font for readability */
+}
+
+a {
+  color: #FF3E00; /* Orange color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E13000; /* Darker orange on hover */
+  text-decoration: underline;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #FFFFFF; /* White background */
+  color: #333333; /* Dark gray text */
+  border-bottom: 1px solid #ddd; /* Light border for separation */
+}
+
+.navbar__brand {
+  color: #FF3E00; /* Orange brand name */
+}
+
+.navbar__link {
+  color: #555555; /* Lighter gray for links */
+}
+
+.navbar__link:hover {
+  color: #FF3E00; /* Change to orange on hover */
+}
+
+/* Code block styling */
+pre, code {
+  background-color: #f4f4f4; /* Very light gray for code background */
+  color: #333333; /* Dark gray text for code */
+  border-radius: 4px;
+    padding: 5px;
+}
+
+code {
+  line-height: 2;
+  font-size: 1rem; /* Regular font size */
+}
+
+/* Highlighted code line */
+pre code span.highlighted-line {
+  background-color: rgba(255, 62, 0, 0.2); /* Light orange for highlighted code lines */
+}
+
+/* Button styling */
+button {
+  background-color: #FF3E00; /* Orange button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #E13000; /* Darker orange on hover */
+}
+
+/* Input fields styling */
+input, textarea {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  color: #333;
+}
+
+input:focus, textarea:focus {
+  border-color: #FF3E00; /* Orange border on focus */
+  outline: none;
+}
+
+/* Dark Mode adjustments */
+[data-theme='dark'] body {
+  background-color: #1E1E1E; /* Dark gray background for dark mode */
+  color: #E0E0E0; /* Light gray text for readability */
+}
+
+[data-theme='dark'] .navbar {
+  background-color: #121212; /* Dark navbar background */
+  color: #E0E0E0; /* Light text in navbar */
+  border-bottom: 1px solid #333; /* Darker border */
+}
+
+[data-theme='dark'] .navbar__brand {
+  color: #FF7F32; /* Orange branding in dark mode */
+}
+
+[data-theme='dark'] .navbar__link {
+  color: #cccccc; /* Lighter gray for links in dark mode */
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: #FF7F32; /* Darker orange when hovered */
+}
+
+
+[data-theme='dark'] pre, [data-theme='dark'] code {
+  background-color: #2e2e2e; /* Dark gray background for code in dark mode */
+  color: #FFD700; /* Yellow for code text */
+}
+
+[data-theme='dark'] pre code span.highlighted-line {
+  background-color: rgba(255, 69, 0, 0.3); /* Darker orange for highlighted code lines */
+}

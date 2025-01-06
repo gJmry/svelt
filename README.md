@@ -1,4 +1,4 @@
-# Svelte-CLI
+# Svelt
 
 This project is a **Rust**-based command-line interface (CLI) tool designed to simplify interactions with **Svelte**
 projects.
@@ -20,22 +20,22 @@ projects.
 
 ### Commands
 
-| **Command**                 | **Description**                                                   | **Status** |
-|-----------------------------|-------------------------------------------------------------------|------------|
-| `init [NAME] [TOOLKIT]`     | Initializes a new Svelte project with the specified name.         | 🚧         |
-| `version` / `v`             | Displays the current version of the CLI.                          | ✅          |
-| `help` / `h`                | Displays help information about the CLI and its commands.         | ✅          |
-| `install [PACKAGE] [FLAG]`  | Installs a specific package with optional flags.                  | ✅          |
-| `run [ENV]`                 | Runs the project in the specified environment.                    | ✅          |
-| `dev`                       | Starts a development server for live preview of the project.      | ✅          |
-| `build`                     | Compiles the Svelte project for production.                       | ✅          |
-| `lint`                      | Runs the linter to detect syntax issues in the Svelte code.       | ✅          |
-| `start`                     | Starts the project, typically used for launching the application. | ✅          |
-| `update [PACKAGE]`          | Updates the specified package or the entire project.              | ✅          |
-| `uninstall [PACKAGE]`       | Uninstalls a specific package from the project.                   | ✅          |
-| `uninstall [PACKAGE]`       | Uninstalls a specific package from the project.                   | ✅          |
-| `create [SCHEMATIC] [NAME]` | Generates a new component or file based on a schematic template.  | 🚧         |
-| `add [TOOLKIT]`             | Add a toolkit in your project (check [Toolkits](#toolkits) )      | 🚧         |
+| **Command**                           | **Description**                                                   | **Status** |
+|---------------------------------------|-------------------------------------------------------------------|------------|
+| `init [NAME] [TOOLKIT]`               | Initializes a new Svelte project with the specified name.         | 🚧         |
+| `version` / `v`                       | Displays the current version of the CLI.                          | ✅          |
+| `help` / `h`                          | Displays help information about the CLI and its commands.         | ✅          |
+| `install [PACKAGE] [FLAG]`            | Installs a specific package with optional flags.                  | ✅          |
+| `run [ENV]`                           | Runs the project in the specified environment.                    | ✅          |
+| `dev`                                 | Starts a development server for live preview of the project.      | ✅          |
+| `build`                               | Compiles the Svelte project for production.                       | ✅          |
+| `lint`                                | Runs the linter to detect syntax issues in the Svelte code.       | ✅          |
+| `start`                               | Starts the project, typically used for launching the application. | ✅          |
+| `update [PACKAGE]`                    | Updates the specified package or the entire project.              | ✅          |
+| `uninstall [PACKAGE]`                 | Uninstalls a specific package from the project.                   | ✅          |
+| `uninstall [PACKAGE]`                 | Uninstalls a specific package from the project.                   | ✅          |
+| `create [SCHEMATIC] [NAME] [OPTIONS]` | Generates a new component or file based on a schematic template.  | 🚧         |
+| `add [TOOLKIT]`                       | Add a toolkit in your project (check [Toolkits](#toolkits) )      | 🚧         |
 
 ### Toolkits
 
@@ -95,18 +95,18 @@ cd svelte-cli
 cargo install --path .
 ```
 
-This will add svelte-cli in your terminal
+This will add Svelt in your terminal
 
 ### Usage
 
 ```bash
-svelte-cli <command> [arguments]
+svelt <command> [arguments]
 ```
 
 For example, to initialize a new Svelte project:
 
 ```bash
-svelte-cli init my-project
+svelt init my-project
 ```
 
 ## Dependecies

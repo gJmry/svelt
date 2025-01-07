@@ -1,6 +1,6 @@
 {
   "name": "@gjmry/svelt",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A CLI for Svelte written in Rust",
   "readme": "README.npm.md",
   "main": "install.js",

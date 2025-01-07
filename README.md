@@ -94,6 +94,10 @@ git clone https://github.com/gJmry/svelte-cli
 cd svelte-cli
 cargo install --path .
 ```
+Or via NPM
+```bash
+npm i -g @gjrmy/svelt
+```
 
 This will add Svelt in your terminal
 

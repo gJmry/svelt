@@ -3,6 +3,44 @@
 This project is a **Rust**-based command-line interface (CLI) tool designed to simplify interactions with **Svelte**
 projects.
 
+## Installation
+
+### Prerequisites
+
+Before installing and using this CLI, make sure you have at least one of the following tools installed:
+
+- **Rust**: Install Rust by following the instructions at [rust-lang.org](https://www.rust-lang.org/).
+- **Node.js** and **npm**: Svelte requires Node.js for dependency management and the development server.
+
+### Install the CLI
+
+Clone this repository and build the project using the following commands:
+
+```bash
+git clone https://github.com/gJmry/svelte-cli
+cd svelte-cli
+cargo install --path .
+```
+
+Or via NPM
+```bash
+npm i -g @gjrmy/svelt
+ ```
+
+This will add Svelt in your terminal
+
+### Usage
+
+```bash
+svelt <command> [arguments]
+```
+
+For example, to initialize a new Svelte project:
+
+```bash
+svelt init my-project
+```
+
 ## Features
 
 ---
@@ -75,39 +113,6 @@ projects.
 | Script    | Add .ts file by default (otherwise use js)                           | ✅      |
 | Css       | Add .css file by default (otherwise use sass, or scss)               | ✅      |
 | Server    | Add +page.server.ts file in route                                    | ✅      |-
-
-## Installation
-
-### Prerequisites
-
-Before installing and using this CLI, make sure you have the following tools installed:
-
-- **Rust**: Install Rust by following the instructions at [rust-lang.org](https://www.rust-lang.org/).
-- **Node.js** and **npm**: Svelte requires Node.js for dependency management and the development server.
-
-### Install the CLI
-
-Clone this repository and build the project using the following commands:
-
-```bash
-git clone https://github.com/gJmry/svelte-cli
-cd svelte-cli
-cargo install --path .
-```
-
-This will add Svelt in your terminal
-
-### Usage
-
-```bash
-svelt <command> [arguments]
-```
-
-For example, to initialize a new Svelte project:
-
-```bash
-svelt init my-project
-```
 
 ## Dependecies
 

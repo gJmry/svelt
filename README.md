@@ -24,7 +24,7 @@ cargo install --path .
 
 Or via NPM
 ```bash
-npm i -g @gjrmy/svelt
+npm i -g @gjmry/svelt
  ```
 
 This will add Svelt in your terminal

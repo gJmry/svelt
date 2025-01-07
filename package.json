@@ -5,7 +5,9 @@
   "readme": "README.npm.md",
   "main": "install.js",
   "bin": {
-    "svelt": "./bin/svelt.exe"
+    "svelt-linux": "./bin/svelt-linux",
+    "svelt-mac": "./bin/svelt-mac",
+    "svelt.exe": "./bin/svelt.exe"
   },
   "scripts": {
     "postinstall": "node install.js"

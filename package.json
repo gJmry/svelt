@@ -2,6 +2,7 @@
   "name": "@gjmry/svelt",
   "version": "0.1.1",
   "description": "A CLI for Svelte written in Rust",
+  "readme": "README.npm.md",
   "main": "install.js",
   "bin": {
     "svelt": "./bin/svelt.exe"
@@ -14,5 +15,10 @@
   ],
   "cpu": [
     "x64"
-  ]
+  ],
+  "keywords": ["Svelte CLI",
+    "Svelte DevKit",
+    "svelte",
+    "svelte-cli",
+    "devkit"]
 }

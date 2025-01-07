@@ -124,6 +124,23 @@ svelt init my-project
 | **serde_json** | 1.0.132     | For serializing and deserializing JSON data.                                  |
 | **clap**       | 4.5.20      | A powerful CLI argument parser, supporting features like auto-generated help. |
 
+## Compatibility
+
+## Compatibility
+
+## Compatibility
+
+| **Operating System** | **Architecture** | **Status**              |
+|----------------------|------------------|-------------------------|
+| Linux                | x86_64          | ✅ Fully supported      |
+| Linux                | ARM64           | 🚧 Work in progress     |
+| Windows              | x86_64          | ✅ Fully supported      |
+| macOS                | x86_64          | 🚧 Work in progress      |
+
+
+
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

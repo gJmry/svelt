@@ -5,7 +5,7 @@
   "readme": "README.npm.md",
   "main": "install.js",
   "bin": {
-    "svelt-linux": "./bin/svelt-linux",
+    "svelt-linux": "./bin/svelt-linux-x86_64",
     "svelt-mac": "./bin/svelt-mac",
     "svelt.exe": "./bin/svelt.exe"
   },
@@ -20,7 +20,9 @@
   "license": "MIT",
   "homepage": "https://svelt.gjeremy.dev/",
   "os": [
-    "win32"
+    "win32",
+    "linux",
+    "darwin"
   ],
   "files": [
     "bin/",
@@ -28,6 +30,7 @@
     "README.npm.md"
   ],
   "cpu": [
+    "arm64",
     "x64"
   ],
   "keywords": ["Svelte CLI",

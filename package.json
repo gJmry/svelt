@@ -2,6 +2,7 @@
   "name": "@gjmry/svelt",
   "version": "0.1.1",
   "description": "A CLI for Svelte written in Rust",
+  "readme": "README.npm.md",
   "main": "install.js",
   "bin": {
     "svelt": "./bin/svelt.exe"
@@ -9,10 +10,27 @@
   "scripts": {
     "postinstall": "node install.js"
   },
+  "author": "Jérémy Girard (https://www.gjeremy.dev/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gjmry/svelt"
+  },
+  "license": "MIT",
+  "homepage": "https://svelt.gjeremy.dev/",
   "os": [
     "win32"
   ],
+  "files": [
+    "bin/",
+    "install.js",
+    "README.npm.md"
+  ],
   "cpu": [
     "x64"
-  ]
+  ],
+  "keywords": ["Svelte CLI",
+    "Svelte DevKit",
+    "svelte",
+    "svelte-cli",
+    "devkit"]
 }

@@ -10,8 +10,20 @@
   "scripts": {
     "postinstall": "node install.js"
   },
+  "author": "Jérémy Girard (https://www.gjeremy.dev/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gjmry/svelt"
+  },
+  "license": "MIT",
+  "homepage": "https://svelt.gjeremy.dev/",
   "os": [
     "win32"
+  ],
+  "files": [
+    "bin/",
+    "install.js",
+    "README.npm.md"
   ],
   "cpu": [
     "x64"

@@ -126,10 +126,6 @@ svelt init my-project
 
 ## Compatibility
 
-## Compatibility
-
-## Compatibility
-
 | **Operating System** | **Architecture** | **Status**              |
 |----------------------|------------------|-------------------------|
 | Linux                | x86_64          | ✅ Fully supported      |

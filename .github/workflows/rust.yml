@@ -1,4 +1,4 @@
-name: Rust Build and Test
+name: Rust Build
 
 on:
   push:
@@ -20,20 +20,20 @@ jobs:
           - i686-pc-windows-msvc
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v4
+      - name: Check out code
+        uses: actions/checkout@v4
 
-    - name: Install Rust toolchain
-      uses: actions-rs/toolchain@v1
-      with:
-        profile: minimal
-        toolchain: stable
-        target: ${{ matrix.target }}
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: ${{ matrix.target }}
 
-    - name: Build for target
-      run: cargo build --target ${{ matrix.target }} --release --verbose
+      - name: Build for target
+        run: cargo build --target ${{ matrix.target }} --release --verbose
 
-    - name: Copy binary to bin
-      run: |
-        mkdir -p bin/${{ matrix.target }}
-        cp target/${{ matrix.target }}/release/* bin/${{ matrix.target }}/
+      - name: Copy binary to bin
+        run: |
+          mkdir -p bin/${{ matrix.target }}
+          find target/${{ matrix.target }}/release/ -maxdepth 1 -type f -exec cp {} bin/${{ matrix.target }}/ \;

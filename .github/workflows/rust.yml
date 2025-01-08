@@ -1,4 +1,4 @@
-name: Rust Build
+name: Rust Build and Test
 
 on:
   push:
@@ -6,34 +6,38 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  release:
+    name: Release - ${{ matrix.platform.os-name }}
     strategy:
       matrix:
-        target:
-          - x86_64-unknown-linux-gnu
-          - x86_64-pc-windows-msvc
-          - i686-pc-windows-msvc
+        platform:
+          - os-name: Linux-x86_64
+            runs-on: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+          - os-name: Windows-x86_64
+            runs-on: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os-name: Windows-i686
+            runs-on: windows-latest
+            target: i686-pc-windows-msvc
+
+    runs-on: ${{ matrix.platform.runs-on }}
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Install Rust toolchain
-        uses: actions-rs/toolchain@v1
+      - name: Build binary
+        uses: houseabsolute/actions-rust-cross@v0
         with:
-          profile: minimal
-          toolchain: stable
-          target: ${{ matrix.target }}
+          command: cargo build
+          target: ${{ matrix.platform.target }}
+          args: "--release"
+          strip: true
 
-      - name: Build for target
-        run: cargo build --target ${{ matrix.target }} --release --verbose
-
-      - name: Copy binary to bin
-        run: |
-          mkdir -p bin/${{ matrix.target }}
-          find target/${{ matrix.target }}/release/ -maxdepth 1 -type f -exec cp {} bin/${{ matrix.target }}/ \;
+      - name: Upload binary artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: binary-${{ matrix.platform.os-name }}
+          path: target/${{ matrix.platform.target }}/release/

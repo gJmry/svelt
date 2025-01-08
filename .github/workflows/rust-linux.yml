@@ -1,0 +1,33 @@
+name: Rust Build - Linux
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-linux:
+    name: Build for Linux
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: x86_64-unknown-linux-gnu
+
+      - name: Build binary
+        run: cargo build --target x86_64-unknown-linux-gnu --release --verbose
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: binary-linux
+          path: target/x86_64-unknown-linux-gnu/release/

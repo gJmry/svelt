@@ -1,0 +1,38 @@
+name: Rust Build - Windows
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    name: Build for Windows
+    strategy:
+      matrix:
+        target:
+          - x86_64-pc-windows-msvc
+          - i686-pc-windows-msvc
+
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: ${{ matrix.target }}
+
+      - name: Build binary
+        run: cargo build --target ${{ matrix.target }} --release --verbose
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: binary-${{ matrix.target }}
+          path: target/${{ matrix.target }}/release/

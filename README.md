@@ -126,10 +126,6 @@ svelt init my-project
 
 ## Compatibility
 
-## Compatibility
-
-## Compatibility
-
 | **Operating System** | **Architecture** | **Status**              |
 |----------------------|------------------|-------------------------|
 | Linux                | x86_64          | ✅ Fully supported      |
@@ -137,12 +133,8 @@ svelt init my-project
 | Windows              | x86_64          | ✅ Fully supported      |
 | macOS                | x86_64          | 🚧 Work in progress      |
 
-
-
-
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - See in the repository
 
 ```
